@@ -1,0 +1,1403 @@
+{
+	"info": {
+		"_postman_id": "c84cfb03-4164-42e3-aaa8-e04350d6356d",
+		"name": "Sophos Central APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"item": [
+				{
+					"name": "Authenticate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d56e81f3-8e23-4f6d-808c-a31fee9fea73",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "token",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://id.sophos.com/api/v2/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"id",
+								"sophos",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"oauth2",
+								"token"
+							]
+						},
+						"description": "Use your Client ID and Client Secret to obtain a JWT token from Sophos ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d56e81f3-8e23-4f6d-808c-a31fee9fea73",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"grant_type\": \"refresh_token\",\n\t\"refresh_token\": \"{{refresh_token}}\",\n\t\"client_id\": \"{{client_id}}\",\n\t\"client_secret\": \"{{client_secret}}\"\n}"
+						},
+						"url": {
+							"raw": "https://id.sophos.com/api/v2/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"id",
+								"sophos",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"oauth2",
+								"token"
+							]
+						},
+						"description": "Use your Client ID and Client Secret to obtain a JWT token from Sophos ID."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Who-am-I?",
+			"item": [
+				{
+					"name": "Who am I?",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1c4c2eb0-a615-42ba-8812-6697394f84e5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    ",
+									"    pm.test(\"Your test name\", function () {",
+									"        var jsonData = pm.response.json();",
+									"        pm.environment.set(\"account_type\", jsonData.idType);",
+									"        if (jsonData.idType == 'partner') {",
+									"            pm.environment.set(\"partner_id\", jsonData.id);",
+									"        }",
+									"        if (jsonData.idType == 'organization') {",
+									"            pm.environment.set(\"organization_id\", jsonData.id);",
+									"        }",
+									"        if (jsonData.idType == 'tenant') {",
+									"            pm.environment.set(\"tenant_id\", jsonData.id);",
+									"        }",
+									"        if (!!jsonData.apiHosts.global) {",
+									"            pm.environment.set(\"api_host_global\", jsonData.apiHosts.global.slice(8));",
+									"        }",
+									"        if (!!jsonData.apiHosts.dataRegion) {",
+									"            pm.environment.set(\"api_host_regional\", jsonData.apiHosts.dataRegion.slice(8));",
+									"        }",
+									"    });",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.central.sophos.com/whoami/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"central",
+								"sophos",
+								"com"
+							],
+							"path": [
+								"whoami",
+								"v1"
+							]
+						},
+						"description": "Returns information about the caller"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Partner",
+			"item": [
+				{
+					"name": "tenants",
+					"item": [
+						{
+							"name": "Create new tenant",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "63892330-439f-46e2-8f4e-59c99302be01",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    ",
+											"    pm.test(\"Saving tenant data\", function () {",
+											"        var jsonData = pm.response.json();",
+											"        pm.environment.set(\"tenant_id\", jsonData.id);",
+											"        pm.environment.set(\"api_host_regional\", jsonData.apiHost.slice(8));",
+											"    });",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}",
+										"description": "ID of a partner"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<string>\",\n    \"dataGeography\": \"<string>\",\n    \"contact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"mobile\": \"<string>\",\n        \"fax\": \"<string>\",\n        \"address\": {\n            \"address1\": \"<string>\",\n            \"address2\": \"<string>\",\n            \"address3\": \"<string>\",\n            \"city\": \"<string>\",\n            \"state\": \"<string>\",\n            \"countryCode\": \"<string>\",\n            \"postalCode\": \"<string>\"\n        }\n    },\n    \"billingType\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "https://{{api_host_global}}/partner/v1/tenants",
+									"protocol": "https",
+									"host": [
+										"{{api_host_global}}"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"tenants"
+									]
+								},
+								"description": "Creates a new tenant"
+							},
+							"response": [ ]
+						},
+						{
+							"name": "Enumerate tenants",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}",
+										"description": "ID of a partner"
+									}
+								],
+								"url": {
+									"raw": "https://{{api_host_global}}/partner/v1/tenants?page=1&pageSize=100&pageTotal=true",
+									"protocol": "https",
+									"host": [
+										"{{api_host_global}}"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"tenants"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "The page number to fetch, starting with 1"
+										},
+										{
+											"key": "pageSize",
+											"value": "100",
+											"description": "The size of the page requested"
+										},
+										{
+											"key": "pageTotal",
+											"value": "true",
+											"description": "Whether the number of pages should be calculated and returned in the response"
+										}
+									]
+								},
+								"description": "Retrieves all the tenants for the specified partner"
+							},
+							"response": [ ]
+						},
+						{
+							"name": "Get tenant details",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "299390dd-67bd-406a-b95f-e39d9e235012",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    ",
+											"    pm.test(\"Saving tenant regional host\", function () {",
+											"        var jsonData = pm.response.json();",
+											"        pm.environment.set(\"tenant_id\", jsonData.id);",
+											"        pm.environment.set(\"api_host_regional\", jsonData.apiHost.slice(8));",
+											"        pm.environment.set(\"dataRegion\", jsonData.apiHost.slice(12,16));",
+											"    });",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}",
+										"description": "ID of a partner"
+									}
+								],
+								"url": {
+									"raw": "https://{{api_host_global}}/partner/v1/tenants/:tenantId",
+									"protocol": "https",
+									"host": [
+										"{{api_host_global}}"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"tenants",
+										":tenantId"
+									],
+									"variable": [
+										{
+											"key": "tenantId",
+											"description": "The tenant ID",
+											"value": "<uuid>"
+										}
+									]
+								},
+								"description": "Retrieves an tenant by ID"
+							},
+							"response": [ ]
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Organization",
+			"item": [
+				{
+					"name": "tenants",
+					"item": [
+						{
+							"name": "Enumerate tenants",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7a0cea81-14f8-46c4-8665-17d2e52ffdf2",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Organization-ID",
+										"value": "{{organization_id}}",
+										"description": "ID of an organization"
+									}
+								],
+								"url": {
+									"raw": "https://{{api_host_global}}/organization/v1/tenants?page=1&pageSize=100&pageTotal=true",
+									"protocol": "https",
+									"host": [
+										"{{api_host_global}}"
+									],
+									"path": [
+										"organization",
+										"v1",
+										"tenants"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "The page number to fetch, starting with 1"
+										},
+										{
+											"key": "pageSize",
+											"value": "100",
+											"description": "The size of the page requested"
+										},
+										{
+											"key": "pageTotal",
+											"value": "true",
+											"description": "Whether the number of pages should be calculated and returned in the response"
+										}
+									]
+								},
+								"description": "Retrieves all the tenants in the specified organization"
+							},
+							"response": [ ]
+						},
+						{
+							"name": "Get tenant details",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "90d32fe2-5bf6-4597-8862-ec25c1c0166e",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    ",
+											"    pm.test(\"Saving tenant regional host\", function () {",
+											"        var jsonData = pm.response.json();",
+											"        pm.environment.set(\"tenant_id\", jsonData.id);",
+											"        pm.environment.set(\"api_host_regional\", jsonData.apiHost.slice(8));",
+											"    });",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Organization-ID",
+										"value": "{{organization_id}}",
+										"description": "ID of an organization"
+									}
+								],
+								"url": {
+									"raw": "https://{{api_host_global}}/organization/v1/tenants/:tenantId",
+									"protocol": "https",
+									"host": [
+										"{{api_host_global}}"
+									],
+									"path": [
+										"organization",
+										"v1",
+										"tenants",
+										":tenantId"
+									],
+									"variable": [
+										{
+											"key": "tenantId",
+											"value": "<uuid>"
+										}
+									]
+								},
+								"description": "Retrieves an tenant by ID"
+							},
+							"response": [ ]
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Endpoint",
+			"item": [
+				{
+					"name": "endpoints",
+					"item": [
+						{
+							"name": "{endpoint Id}",
+							"item": [
+								{
+									"name": "tamper-protection",
+									"item": [
+										{
+											"name": "Get settings",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{access_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-Tenant-ID",
+														"value": "{{tenant_id}}",
+														"description": "Tenant ID."
+													}
+												],
+												"url": {
+													"raw": "https://api-{{dataRegion}}.central.sophos.com/endpoint/v1/endpoints/:endpointId/tamper-protection",
+													"protocol": "https",
+													"host": [
+														"api-{{dataRegion}}",
+														"central",
+														"sophos",
+														"com"
+													],
+													"path": [
+														"endpoint",
+														"v1",
+														"endpoints",
+														":endpointId",
+														"tamper-protection"
+													],
+													"variable": [
+														{
+															"key": "endpointId",
+															"value": "{{endpoint_id}}",
+															"description": "The endpoint ID."
+														}
+													]
+												},
+												"description": "Get the Tamper Protection settings for the specified endpoint."
+											},
+											"response": [ ]
+										},
+										{
+											"name": "Update settings",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{access_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-Tenant-ID",
+														"value": "{{tenant_id}}",
+														"description": "Tenant ID."
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"enabled\": \"<boolean>\",\n    \"regeneratePassword\": \"<boolean>\"\n}"
+												},
+												"url": {
+													"raw": "https://api-{{dataRegion}}.central.sophos.com/endpoint/v1/endpoints/:endpointId/tamper-protection",
+													"protocol": "https",
+													"host": [
+														"api-{{dataRegion}}",
+														"central",
+														"sophos",
+														"com"
+													],
+													"path": [
+														"endpoint",
+														"v1",
+														"endpoints",
+														":endpointId",
+														"tamper-protection"
+													],
+													"variable": [
+														{
+															"key": "endpointId",
+															"value": "{{endpoint_id}}",
+															"description": "The endpoint ID."
+														}
+													]
+												},
+												"description": "Turns Tamper Protection on or off on the endpoint. Or generates a new Tamper Protection password. Note that Tamper Protection can be enabled for an endpoint only if it has also been enabled globally."
+											},
+											"response": [ ]
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Get endpoint details",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b4642eba-cfa9-467f-9800-b28204c963ec",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    ",
+													"    pm.test(\"Saving endpoint id\", function () {",
+													"        var jsonData = pm.response.json();",
+													"        pm.environment.set(\"endpoint_id\", jsonData.id);",
+													"    });",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Tenant-ID",
+												"value": "{{tenant_id}}",
+												"description": "Tenant ID."
+											}
+										],
+										"url": {
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/endpoint/v1/endpoints/:endpointId",
+											"protocol": "https",
+											"host": [
+												"api-{{dataRegion}}",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"endpoint",
+												"v1",
+												"endpoints",
+												":endpointId"
+											],
+											"variable": [
+												{
+													"key": "endpointId",
+													"value": "<uuid>",
+													"description": "The endpoint ID."
+												}
+											]
+										},
+										"description": "Get the endpoint based on ID."
+									},
+									"response": [ ]
+								},
+								{
+									"name": "Delete endpoint",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-Tenant-ID",
+												"value": "{{tenant_id}}",
+												"description": "Tenant ID."
+											}
+										],
+										"url": {
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/endpoint/v1/endpoints/:endpointId",
+											"protocol": "https",
+											"host": [
+												"api-{{dataRegion}}",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"endpoint",
+												"v1",
+												"endpoints",
+												":endpointId"
+											],
+											"variable": [
+												{
+													"key": "endpointId",
+													"value": "{{endpoint_id}}",
+													"description": "The endpoint ID."
+												}
+											]
+										},
+										"description": "Deletes the specified endpoint."
+									},
+									"response": [ ]
+								},
+								{
+									"name": "Scan an endpoint",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Tenant-ID",
+												"value": "{{tenant_id}}",
+												"description": "Tenant ID."
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{}"
+										},
+										"url": {
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/endpoint/v1/endpoints/:endpointId/scans",
+											"protocol": "https",
+											"host": [
+												"api-{{dataRegion}}",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"endpoint",
+												"v1",
+												"endpoints",
+												":endpointId",
+												"scans"
+											],
+											"variable": [
+												{
+													"key": "endpointId",
+													"value": "{{endpoint_id}}",
+													"description": "The endpoint ID."
+												}
+											]
+										},
+										"description": "Sends a request to the specified endpoint to perform or configure a scan."
+									},
+									"response": [ ]
+								},
+								{
+									"name": "Check for updates",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Tenant-ID",
+												"value": "{{tenant_id}}",
+												"description": "Tenant ID."
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{}"
+										},
+										"url": {
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/endpoint/v1/endpoints/:endpointId/update-checks",
+											"protocol": "https",
+											"host": [
+												"api-{{dataRegion}}",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"endpoint",
+												"v1",
+												"endpoints",
+												":endpointId",
+												"update-checks"
+											],
+											"variable": [
+												{
+													"key": "endpointId",
+													"value": "{{endpoint_id}}",
+													"description": "The endpoint ID."
+												}
+											]
+										},
+										"description": "Sends a request to the endpoint to check for Sophos management agent software updates."
+									},
+									"response": [ ]
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Query endpoints",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Tenant-ID",
+										"value": "{{tenant_id}}",
+										"description": "Tenant ID."
+									}
+								],
+								"url": {
+									"raw": "https://api-{{dataRegion}}.central.sophos.com/endpoint/v1/endpoints?pageSize=100&pageTotal=true",
+									"protocol": "https",
+									"host": [
+										"api-{{dataRegion}}",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"endpoint",
+										"v1",
+										"endpoints"
+									],
+									"query": [
+										{
+											"key": "pageFromKey",
+											"value": "<string>",
+											"description": "The key of the item from where to fetch a page.",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "100",
+											"description": "The size of the page requested."
+										},
+										{
+											"key": "pageTotal",
+											"value": "true",
+											"description": "Whether the number of pages should be calculated and returned in the response."
+										},
+										{
+											"key": "healthStatus",
+											"value": "<string>",
+											"description": "Health status.",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Endpoint type.",
+											"disabled": true
+										},
+										{
+											"key": "tamperProtectionEnabled",
+											"value": "<boolean>",
+											"description": "Tamper protection status.",
+											"disabled": true
+										},
+										{
+											"key": "lockdownStatus",
+											"value": "",
+											"description": "Server lockdown status.",
+											"disabled": true
+										},
+										{
+											"key": "lastSeenBefore",
+											"value": "<string>",
+											"description": "Last seen before date and time (UTC) exclusive.",
+											"disabled": true
+										},
+										{
+											"key": "lastSeenAfter",
+											"value": "<string>",
+											"description": "Last seen after date and time (UTC) inclusive.",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "dataRegion",
+											"value": "{{dataRegion}}",
+											"description": "The data region where tenant data is stored. (This can only be one of eu01,eu02,us01,us02,us03)"
+										}
+									]
+								},
+								"description": "Get all the endpoints for the specified tenant."
+							},
+							"response": [ ]
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Common",
+			"item": [
+				{
+					"name": "alerts",
+					"item": [
+						{
+							"name": "{alert Id}",
+							"item": [
+								{
+									"name": "Get alert details",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Tenant-ID",
+												"value": "{{tenant_id}}",
+												"description": "Tenant ID."
+											}
+										],
+										"url": {
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/common/v1/alerts/:alertId",
+											"protocol": "https",
+											"host": [
+												"api-{{dataRegion}}",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"common",
+												"v1",
+												"alerts",
+												":alertId"
+											],
+											"variable": [
+												{
+													"key": "alertId",
+													"value": "<uuid>",
+													"description": "The alert ID."
+												}
+											]
+										},
+										"description": "Get details of a specific alert."
+									},
+									"response": [ ]
+								},
+								{
+									"name": "Act on alert",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Tenant-ID",
+												"value": "{{tenant_id}}",
+												"description": "Tenant ID."
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"action\": \"<string>\",\n    \"message\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/common/v1/alerts/:alertId/actions",
+											"protocol": "https",
+											"host": [
+												"api-{{dataRegion}}",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"common",
+												"v1",
+												"alerts",
+												":alertId",
+												"actions"
+											],
+											"variable": [
+												{
+													"key": "alertId",
+													"value": "<uuid>",
+													"description": "The alert ID."
+												}
+											]
+										},
+										"description": "Take an action on a specific alert."
+									},
+									"response": [ ]
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Query alerts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Tenant-ID",
+										"value": "{{tenant_id}}",
+										"description": "Tenant ID."
+									}
+								],
+								"url": {
+									"raw": "https://api-{{dataRegion}}.central.sophos.com/common/v1/alerts?",
+									"protocol": "https",
+									"host": [
+										"api-{{dataRegion}}",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"common",
+										"v1",
+										"alerts"
+									],
+									"query": [
+										{
+											"key": "groupKey",
+											"value": "<string>",
+											"description": "Alert group key. You can filter by group key.",
+											"disabled": true
+										},
+										{
+											"key": "from",
+											"value": "2019-08-01",
+											"description": "You can find alerts that were raised on or after this time.",
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": "2019-10-01",
+											"description": "You can find alerts that were raised before this time.",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "<string>,<string>",
+											"description": "Defines how to sort the data.",
+											"disabled": true
+										},
+										{
+											"key": "product",
+											"value": "<string>,<string>",
+											"description": "Alerts for a product. You can query by product types.",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "<string>,<string>",
+											"description": "Alert category. You can query by different categories.",
+											"disabled": true
+										},
+										{
+											"key": "severity",
+											"value": "<string>,<string>",
+											"description": "Alerts for a specific severity level. You can query by severity levels.",
+											"disabled": true
+										},
+										{
+											"key": "ids",
+											"value": "<uuid>,<uuid>",
+											"description": "List of IDs.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "<string>,<string>",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "50",
+											"description": "The size of the page requested.",
+											"disabled": true
+										},
+										{
+											"key": "pageFromKey",
+											"value": "<string>",
+											"description": "The key of the item from where to fetch a page.",
+											"disabled": true
+										},
+										{
+											"key": "pageTotal",
+											"value": "<boolean>",
+											"description": "Whether the number of pages should be calculated and returned in the response.",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "dataRegion",
+											"value": "{{dataRegion}}",
+											"description": "The data region where tenant data is stored. (This can only be one of eu01,eu02,us01,us02,us03)"
+										}
+									]
+								},
+								"description": "Get alerts matching criteria in query parameters."
+							},
+							"response": [ ]
+						},
+						{
+							"name": "Query alerts (POST)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Tenant-ID",
+										"value": "{{tenant_id}}",
+										"description": "Tenant ID."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"groupKey\": \"<string>\",\n    \"fields\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"from\": \"<datetime>\",\n    \"ids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n    ],\n    \"product\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"severity\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"to\": \"<datetime>\",\n    \"pageFromKey\": \"<string>\",\n    \"pageSize\": \"<integer>\",\n    \"pageTotal\": \"<boolean>\",\n    \"sort\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "https://api-{{dataRegion}}.central.sophos.com/common/v1/alerts/search?",
+									"protocol": "https",
+									"host": [
+										"api-{{dataRegion}}",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"common",
+										"v1",
+										"alerts",
+										"search"
+									],
+									"query": [
+										{
+											"key": "groupKey",
+											"value": "<string>",
+											"description": "Alert group key. You can filter by group key.",
+											"disabled": true
+										},
+										{
+											"key": "from",
+											"value": "<date-time>",
+											"description": "You can find alerts that were raised on or after this time.",
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": "<date-time>",
+											"description": "You can find alerts that were raised before this time.",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "<string>,<string>",
+											"description": "Defines how to sort the data.",
+											"disabled": true
+										},
+										{
+											"key": "product",
+											"value": "<string>,<string>",
+											"description": "Alerts for a product. You can query by product types.",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "<string>,<string>",
+											"description": "Alert category. You can query by different categories.",
+											"disabled": true
+										},
+										{
+											"key": "severity",
+											"value": "<string>,<string>",
+											"description": "Alerts for a specific severity level. You can query by severity levels.",
+											"disabled": true
+										},
+										{
+											"key": "ids",
+											"value": "<uuid>,<uuid>",
+											"description": "List of IDs.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "<string>,<string>",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "50",
+											"description": "The size of the page requested.",
+											"disabled": true
+										},
+										{
+											"key": "pageFromKey",
+											"value": "<string>",
+											"description": "The key of the item from where to fetch a page.",
+											"disabled": true
+										},
+										{
+											"key": "pageTotal",
+											"value": "<boolean>",
+											"description": "Whether the number of pages should be calculated and returned in the response.",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "dataRegion",
+											"value": "{{dataRegion}}",
+											"description": "The data region where tenant data is stored. (This can only be one of eu01,eu02,us01,us02,us03)"
+										}
+									]
+								},
+								"description": "Get alerts matching request."
+							},
+							"response": [ ]
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2963cb2c-3f57-418c-a7dc-dd79e4028cd4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a0d87d4b-b5e4-4329-8ad7-e075ee8e57a3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
