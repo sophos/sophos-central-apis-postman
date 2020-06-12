@@ -2,8 +2,6 @@
 
 This is a Postman collection for interacting with Sophos Central's Public APIs. See [https://developer.sophos.com](https://developer.sophos.com).
 
-**Note**: All resources in this repository are being made available as part of an invite-only preview of our new API program. Please contact your Sophos Account Manager if you would like to join.
-
 ## Getting started
 
 Once you have been accepted into the Sophos Central Public APIs preview program, you can create a set of API credentials by following the appropriate guide:
@@ -16,7 +14,7 @@ Note the `client_id` and `client_secret` for the API credentials you create.
 
 ## Install Postman
 
-To use this collection you will need to install [Postman](https://www.getpostman.com/downloads/) v7.6 or a later stable version.
+To use this collection you will need to install [Postman](https://www.getpostman.com/downloads/) v7.26 or a later stable version.
 
 ## Import collection
 
@@ -34,13 +32,10 @@ We recommend that you make API calls in the following order:
 1. Call the Who-am-I API to find your Sophos-assigned partner, organization, or tenant ID.
 1. Enumerate tenants as a partner/organization.
 1. Get a specific tenant by ID.
+1. Invoke Common API
 1. Enumerate endpoints for a tenant.
 1. Get a specific endpoint by ID.
-1. Get tamper-protection settings for a specific endpoint.
-1. Scan an endpoint.
-1. Enumerate alerts for a tenant.
-1. Get a specific alert's details.
-1. Act on an alert.
+1. Invoke Endpoint APIs
 
 ## A note on security️
 
