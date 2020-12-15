@@ -4,17 +4,17 @@ This is a Postman collection for interacting with Sophos Central's Public APIs. 
 
 ## Getting started
 
-Once you have been accepted into the Sophos Central Public APIs preview program, you can create a set of API credentials by following the appropriate guide:
+Use one of these Getting Started guides to set up your API credentials:
 
-- For partners: [https://developer.sophos.com/getting-started](https://developer.sophos.com/getting-started)
-- For organizations: [https://developer.sophos.com/getting-started-organization](https://developer.sophos.com/getting-started-organization)
-- For tenants: [https://developer.sophos.com/getting-started-tenant](https://developer.sophos.com/getting-started-tenant)
+- Sophos Partners use [this](https://developer.sophos.com/getting-started) guide. You must be enrolled in the Sophos Partner Program to call our Partner APIs.
+- Enterprise customers use [this](https://developer.sophos.com/getting-started-organization) guide. You should have Enterprise Admin enabled for one or more tenants in your organization.
+- If neither profile fits you, use [this](https://developer.sophos.com/getting-started-tenant) guide for tenants.
 
-Note the `client_id` and `client_secret` for the API credentials you create.
+Note down the `client_id` and `client_secret` for the API credentials you create.
 
 ## Install Postman
 
-To use this collection you will need to install [Postman](https://www.getpostman.com/downloads/) v7.26 or a later stable version.
+To use this collection you will need to install [Postman](https://www.getpostman.com/downloads/) v7.36 or a later stable version.
 
 ## Import collection
 
@@ -29,13 +29,12 @@ Next edit the `Sophos Central Example.postman_environment.json` file provided to
 We recommend that you make API calls in the following order:
 
 1. Authenticate to obtain an access token.
-1. Call the Who-am-I API to find your Sophos-assigned partner, organization, or tenant ID.
-1. Enumerate tenants as a partner/organization.
-1. Get a specific tenant by ID.
-1. Invoke Common API
-1. Enumerate endpoints for a tenant.
-1. Get a specific endpoint by ID.
-1. Invoke Endpoint APIs
+1. Call the Who-am-I API to find your Sophos-assigned partner, organization, or tenant ID. This will add your account ID and the time-limited access token to the Postman environment, making it easier to click through many of the other API requests.
+1. Enumerate tenants as a partner/organization and get a specific tenant by ID. (Tip: Set `tenant_id` in the Postman environment for convenience)
+1. Call the Common API to list alerts, users and groups.
+1. Enumerate endpoints for a tenant using the Endpoint API.
+1. Configure endpoint global settings and perform actions, such as starting a scan.
+1. See [this](https://developer.sophos.com/getting-started-with-live-discover) to run a Live Discover query.
 
 ## A note on security️
 
@@ -48,4 +47,4 @@ Exercise extreme caution when handling and storing your credentials, in particul
 
 ## Feedback
 
-Please send any feedback to apis@sophos.com.
+Please send us feedback through the [community forum](https://community.sophos.com/developer/sophos-central-api/f/feedback-issues/120782/help-feedback).
