@@ -17777,7 +17777,7 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "occaecat re,mollit",
+											"value": "ex aute nulla,consectetur",
 											"description": "The fields to return in a partial response.",
 											"disabled": true
 										}
@@ -17805,7 +17805,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/categories?fields=eu ipsum,qui",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/categories?fields=est,laborum aute consequat",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -17822,7 +17822,7 @@
 											"query": [
 												{
 													"key": "fields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												}
 											]
 										}
@@ -17837,7 +17837,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"items\": [\n  {\n   \"id\": \"urn:uuid:aebf5a3b-2e9f-b1f2-82b2-451c2705f4ab\",\n   \"name\": \"fugiat tem\",\n   \"type\": \"custom\",\n   \"queryCount\": -37380382,\n   \"code\": \"dolor fugiat\",\n   \"description\": \"est consequat irure\",\n   \"icon\": \"Excep\",\n   \"tenant\": {\n    \"id\": \"urn:uuid:35a3a26c-c37d-74a0-4925-44a743371dac\"\n   },\n   \"createdAt\": \"culpa irure non\",\n   \"createdBy\": {\n    \"id\": \"4029f1a1-ec54-97c8-045c-e0cd7672130c\"\n   },\n   \"updatedAt\": \"sint enim non\",\n   \"updatedBy\": {\n    \"id\": \"9811fbfa-4a8c-eec5-e9b1-7e634bf12e22\"\n   }\n  },\n  {\n   \"id\": \"3a7847f8-21af-9087-b1ff-5b5902b880e1\",\n   \"name\": \"magna aute\",\n   \"type\": \"canned\",\n   \"queryCount\": 73666050,\n   \"code\": \"sint nostrud ut\",\n   \"description\": \"nulla\",\n   \"icon\": \"veniam Excepteur\",\n   \"tenant\": {\n    \"id\": \"urn:uuid:cd42ac9e-9633-4578-34cf-67144ed2348a\"\n   },\n   \"createdAt\": \"sint Ut dolore veniam ea\",\n   \"createdBy\": {\n    \"id\": \"4534c49a-01f4-dd40-35e2-701e0c43bb70\"\n   },\n   \"updatedAt\": \"ullamco dolor\",\n   \"updatedBy\": {\n    \"id\": \"urn:uuid:99964e95-e096-b2e4-a223-a4b01b6c6f57\"\n   }\n  }\n ]\n}"
+									"body": "{\n \"items\": [\n  {\n   \"id\": \"urn:uuid:5bee2273-38a4-daf6-824c-3d87f1fa40e3\",\n   \"name\": \"magna ipsum\",\n   \"type\": \"canned\",\n   \"queryCount\": -25083079,\n   \"code\": \"in incididunt eiusmod occaecat ipsum\",\n   \"description\": \"adipisicing commodo Duis non\",\n   \"icon\": \"culpa ut ut anim\",\n   \"tenant\": {\n    \"id\": \"urn:uuid:318d8e98-7149-00eb-73b6-bd46790ffb2d\"\n   },\n   \"createdAt\": \"tempor irure\",\n   \"createdBy\": {\n    \"id\": \"urn:uuid:5b510ff2-1779-c44e-a992-7214a670d3f1\"\n   },\n   \"updatedAt\": \"non elit quis exercitation\",\n   \"updatedBy\": {\n    \"id\": \"urn:uuid:cce8de9f-804c-e3ab-19a4-842007153eb8\"\n   }\n  },\n  {\n   \"id\": \"f8f358fb-ed5b-b7aa-9da7-ba1ce23645e7\",\n   \"name\": \"sunt mollit\",\n   \"type\": \"custom\",\n   \"queryCount\": -39242763,\n   \"code\": \"nisi labore tempor\",\n   \"description\": \"ex irure dolor mollit\",\n   \"icon\": \"dolor non\",\n   \"tenant\": {\n    \"id\": \"6485ed03-e35c-bb62-7472-b93c1eae275e\"\n   },\n   \"createdAt\": \"ex\",\n   \"createdBy\": {\n    \"id\": \"21b35b67-63c1-27ed-e234-3e5938f106f1\"\n   },\n   \"updatedAt\": \"nulla Excepteur non et\",\n   \"updatedBy\": {\n    \"id\": \"urn:uuid:e214ca97-e16b-c73e-99bf-596326b8489a\"\n   }\n  }\n ]\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -17851,7 +17851,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/categories?fields=eu ipsum,qui",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/categories?fields=est,laborum aute consequat",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -17868,7 +17868,7 @@
 											"query": [
 												{
 													"key": "fields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												}
 											]
 										}
@@ -17883,7 +17883,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						},
@@ -17917,7 +17917,7 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "occaecat re,mollit",
+											"value": "ex aute nulla,consectetur",
 											"description": "The fields to return in a partial response.",
 											"disabled": true
 										}
@@ -17930,7 +17930,7 @@
 										},
 										{
 											"key": "categoryId",
-											"value": "09c8b598-9f8b-7aa3-8f1a-8c7ee1398606",
+											"value": "urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37",
 											"description": "(Required) Category ID."
 										}
 									]
@@ -17950,7 +17950,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/categories/:categoryId?fields=eu ipsum,qui",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/categories/:categoryId?fields=est,laborum aute consequat",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -17968,7 +17968,7 @@
 											"query": [
 												{
 													"key": "fields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												}
 											],
 											"variable": [
@@ -17988,7 +17988,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"id\": \"urn:uuid:3caaf435-38ab-1d99-ba92-ba9718cb7869\",\n \"name\": \"occaecat sint\",\n \"type\": \"canned\",\n \"queryCount\": -15918984,\n \"code\": \"officia incididunt irure Lorem\",\n \"description\": \"id\",\n \"icon\": \"in\",\n \"tenant\": {\n  \"id\": \"urn:uuid:8ee3dccb-a19a-4d4f-bd7c-90d658a1d5d4\"\n },\n \"createdAt\": \"et cupidatat\",\n \"createdBy\": {\n  \"id\": \"ef2ffa6c-5f72-15c9-585b-58b47530f2d3\"\n },\n \"updatedAt\": \"non in\",\n \"updatedBy\": {\n  \"id\": \"3c29a7bd-b72c-1d8a-e0b8-117daa2207c3\"\n }\n}"
+									"body": "{\n \"id\": \"urn:uuid:96afb5d1-1875-9b06-0c3a-464da2236816\",\n \"name\": \"eiusmod enim qui cupidatat amet\",\n \"type\": \"custom\",\n \"queryCount\": 35033624,\n \"code\": \"ea eu commodo\",\n \"description\": \"dolore\",\n \"icon\": \"irure commodo sunt tempor ad\",\n \"tenant\": {\n  \"id\": \"urn:uuid:a5c2c72a-6202-180c-9463-97f8387f1d5e\"\n },\n \"createdAt\": \"U\",\n \"createdBy\": {\n  \"id\": \"aa9fd54e-17c6-11d2-8132-754acb3eaa15\"\n },\n \"updatedAt\": \"eu et do\",\n \"updatedBy\": {\n  \"id\": \"urn:uuid:98ecf8b1-e649-3eed-39a0-ea230de2f4b5\"\n }\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -18002,7 +18002,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/categories/:categoryId?fields=eu ipsum,qui",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/categories/:categoryId?fields=est,laborum aute consequat",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -18020,7 +18020,7 @@
 											"query": [
 												{
 													"key": "fields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												}
 											],
 											"variable": [
@@ -18040,7 +18040,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						},
@@ -18072,19 +18072,19 @@
 									"query": [
 										{
 											"key": "categoryId",
-											"value": "09c8b598-9f8b-7aa3-8f1a-8c7ee1398606",
+											"value": "urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37",
 											"description": "Category ID.",
 											"disabled": true
 										},
 										{
 											"key": "search",
-											"value": "minim",
+											"value": "commodo veniam consectetur culpa",
 											"description": "Search for items that match the given term(s).",
 											"disabled": true
 										},
 										{
 											"key": "searchFields",
-											"value": "occaecat re,mollit",
+											"value": "ex aute nulla,consectetur",
 											"description": "Search only within the specified fields.",
 											"disabled": true
 										},
@@ -18108,7 +18108,7 @@
 										},
 										{
 											"key": "fields",
-											"value": "occaecat re,mollit",
+											"value": "ex aute nulla,consectetur",
 											"description": "The fields to return in a partial response.",
 											"disabled": true
 										}
@@ -18136,7 +18136,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries?categoryId=09c8b598-9f8b-7aa3-8f1a-8c7ee1398606&search=minim&searchFields=eu ipsum,qui&pageSize=50&page=1&pageTotal=false&fields=eu ipsum,qui",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries?categoryId=urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37&search=commodo veniam consectetur culpa&searchFields=est,laborum aute consequat&pageSize=50&page=1&pageTotal=false&fields=est,laborum aute consequat",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -18152,15 +18152,15 @@
 											"query": [
 												{
 													"key": "categoryId",
-													"value": "09c8b598-9f8b-7aa3-8f1a-8c7ee1398606"
+													"value": "urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37"
 												},
 												{
 													"key": "search",
-													"value": "minim"
+													"value": "commodo veniam consectetur culpa"
 												},
 												{
 													"key": "searchFields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												},
 												{
 													"key": "pageSize",
@@ -18176,7 +18176,7 @@
 												},
 												{
 													"key": "fields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												}
 											]
 										}
@@ -18191,7 +18191,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"items\": [\n  {\n   \"id\": \"urn:uuid:5e022403-1486-9a27-5993-c3452b327aa0\",\n   \"name\": \"culpa et sint\",\n   \"type\": \"canned\",\n   \"template\": \"ipsum\",\n   \"variables\": [\n    {\n     \"name\": \"Ut elit est\",\n     \"dataType\": \"integer\",\n     \"value\": \"ex eiusmod\",\n     \"pivotType\": \"filePath\"\n    },\n    {\n     \"name\": \"do ea\",\n     \"dataType\": \"dateTime\",\n     \"value\": \"adipisicing\",\n     \"pivotType\": \"deviceId\"\n    }\n   ],\n   \"categories\": [\n    {\n     \"id\": \"urn:uuid:556f40e4-b521-8f31-585f-0124d1fd911f\"\n    },\n    {\n     \"id\": \"urn:uuid:621ded67-0313-d1cb-c610-061d617f0434\"\n    }\n   ],\n   \"code\": \"t\",\n   \"description\": \"nisi et t\",\n   \"tenant\": {\n    \"id\": \"8eeef296-67d0-5cf5-5f73-e83e8d66ce95\"\n   },\n   \"createdAt\": \"do sed\",\n   \"createdBy\": {\n    \"id\": \"urn:uuid:40e5a2b9-00fe-8618-8e29-61dd46b807c2\",\n    \"type\": \"service\",\n    \"name\": \"quis nulla ut incididunt\",\n    \"accountId\": \"91a3b0a7-24b6-7b40-29a5-0fe362228aa8\",\n    \"accountType\": \"organization\"\n   },\n   \"updatedAt\": \"incididunt\",\n   \"updatedBy\": {\n    \"id\": \"d4ec3a00-a1a6-01f4-7ae3-d49861f692a7\",\n    \"type\": \"service\",\n    \"name\": \"nisi ullamco adipisicing deserunt\",\n    \"accountId\": \"fb28b4ea-5e50-1c90-7261-28d7f0bc836f\",\n    \"accountType\": \"organization\"\n   }\n  },\n  {\n   \"id\": \"c75faa82-8443-7026-36bb-0a38f5ce3d93\",\n   \"name\": \"ut\",\n   \"type\": \"canned\",\n   \"template\": \"qui nisi moll\",\n   \"variables\": [\n    {\n     \"name\": \"culpa pariatur\",\n     \"dataType\": \"text\",\n     \"value\": \"eu officia nisi\",\n     \"pivotType\": \"sha256\"\n    },\n    {\n     \"name\": \"fugiat elit\",\n     \"dataType\": \"integer\",\n     \"value\": \"in voluptate\",\n     \"pivotType\": \"registryKey\"\n    }\n   ],\n   \"categories\": [\n    {\n     \"id\": \"08606465-4e58-6bdb-f92a-044b451da5ec\"\n    },\n    {\n     \"id\": \"328bc32a-2312-dd78-ff06-b79b6087a64a\"\n    }\n   ],\n   \"code\": \"in anim magna\",\n   \"description\": \"consequat id minim do\",\n   \"tenant\": {\n    \"id\": \"urn:uuid:d279d482-fb5c-f651-b02d-85da3f310ec1\"\n   },\n   \"createdAt\": \"elit do culpa\",\n   \"createdBy\": {\n    \"id\": \"urn:uuid:42ceca96-f9d1-eb1b-7987-7a9c97c8f467\",\n    \"type\": \"service\",\n    \"name\": \"ipsum esse dolor nostrud\",\n    \"accountId\": \"26abe553-1153-52da-4926-e49ea8da3585\",\n    \"accountType\": \"organization\"\n   },\n   \"updatedAt\": \"in veniam velit\",\n   \"updatedBy\": {\n    \"id\": \"urn:uuid:fc4a78a5-d4d2-63b5-d2b1-2455111517f0\",\n    \"type\": \"user\",\n    \"name\": \"ullamco non velit\",\n    \"accountId\": \"urn:uuid:6e8c76ba-f73d-e459-1987-b6c48404f85d\",\n    \"accountType\": \"tenant\"\n   }\n  }\n ],\n \"pages\": {\n  \"current\": -6235005,\n  \"size\": -55199859,\n  \"maxSize\": 33019816,\n  \"total\": -87748373,\n  \"items\": -26777967\n }\n}"
+									"body": "{\n \"items\": [\n  {\n   \"id\": \"urn:uuid:56c5aaee-b216-91e3-efd0-319147e038ff\",\n   \"name\": \"Duis deserunt nostrud irure\",\n   \"type\": \"custom\",\n   \"template\": \"Duis ut ex\",\n   \"variables\": [\n    {\n     \"name\": \"dolore \",\n     \"dataType\": \"dateTime\",\n     \"value\": \"enim pariatur in\",\n     \"pivotType\": \"filePath\"\n    },\n    {\n     \"name\": \"dolo\",\n     \"dataType\": \"dateTime\",\n     \"value\": \"deserun\",\n     \"pivotType\": \"registryKey\"\n    }\n   ],\n   \"categories\": [\n    {\n     \"id\": \"urn:uuid:7aecb97c-010c-100b-dd2e-36f698992ceb\"\n    },\n    {\n     \"id\": \"30de1d09-d68b-06de-bfa5-8934bb10d16b\"\n    }\n   ],\n   \"code\": \"Excepteur laboris\",\n   \"description\": \"nostrud deserunt ullamco esse\",\n   \"tenant\": {\n    \"id\": \"urn:uuid:06bbd3f6-6f49-6853-9136-820f738f42ca\"\n   },\n   \"createdAt\": \"id mollit enim amet non\",\n   \"createdBy\": {\n    \"id\": \"32957a24-8343-a66d-09dc-ad274c010fe3\",\n    \"type\": \"user\",\n    \"name\": \"moll\",\n    \"accountId\": \"urn:uuid:cb9f1dc0-0199-f98a-ae03-d5b73263afd5\",\n    \"accountType\": \"organization\"\n   },\n   \"updatedAt\": \"officia labore sunt\",\n   \"updatedBy\": {\n    \"id\": \"4a7a6c22-8b76-3d8a-08c2-a0c36effa82f\",\n    \"type\": \"service\",\n    \"name\": \"laboris in tempor proident\",\n    \"accountId\": \"urn:uuid:88bcb011-b2ad-f9e2-c9f1-f60c6da86788\",\n    \"accountType\": \"organization\"\n   }\n  },\n  {\n   \"id\": \"urn:uuid:8f60e4c0-963d-e9df-41b7-a27af4707cae\",\n   \"name\": \"ex non in in\",\n   \"type\": \"custom\",\n   \"template\": \"proident\",\n   \"variables\": [\n    {\n     \"name\": \"deserunt exercitation\",\n     \"dataType\": \"double\",\n     \"value\": \"minim dolore\",\n     \"pivotType\": \"filePath\"\n    },\n    {\n     \"name\": \"dolor\",\n     \"dataType\": \"text\",\n     \"value\": \"anim eu Lorem\",\n     \"pivotType\": \"ipAddress\"\n    }\n   ],\n   \"categories\": [\n    {\n     \"id\": \"urn:uuid:01d224bb-4bfd-06a7-0cde-3df3fac24d0a\"\n    },\n    {\n     \"id\": \"19e18db8-dc44-2aaa-e9c7-5e958f9ec1ee\"\n    }\n   ],\n   \"code\": \"officia nisi reprehenderi\",\n   \"description\": \"dolor \",\n   \"tenant\": {\n    \"id\": \"urn:uuid:db67343a-ed41-e2a8-7269-a32cbf0d0200\"\n   },\n   \"createdAt\": \"in Duis ut non\",\n   \"createdBy\": {\n    \"id\": \"urn:uuid:d95e50c1-84b4-42ec-98ea-b088ae00ce39\",\n    \"type\": \"user\",\n    \"name\": \"dolore incididunt tempor in reprehenderit\",\n    \"accountId\": \"urn:uuid:0514ca02-e670-a641-e7c7-9ef57441390e\",\n    \"accountType\": \"organization\"\n   },\n   \"updatedAt\": \"velit\",\n   \"updatedBy\": {\n    \"id\": \"urn:uuid:408f3a58-e3f0-469f-015a-7dcb0d27a0aa\",\n    \"type\": \"user\",\n    \"name\": \"qui tempor\",\n    \"accountId\": \"urn:uuid:f9785fed-8ddf-07a0-82c7-e4751b3acaef\",\n    \"accountType\": \"tenant\"\n   }\n  }\n ],\n \"pages\": {\n  \"current\": 67144087,\n  \"size\": -73737987,\n  \"maxSize\": -54494426,\n  \"total\": -78028104,\n  \"items\": -83979704\n }\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -18205,7 +18205,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries?categoryId=09c8b598-9f8b-7aa3-8f1a-8c7ee1398606&search=minim&searchFields=eu ipsum,qui&pageSize=50&page=1&pageTotal=false&fields=eu ipsum,qui",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries?categoryId=urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37&search=commodo veniam consectetur culpa&searchFields=est,laborum aute consequat&pageSize=50&page=1&pageTotal=false&fields=est,laborum aute consequat",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -18221,15 +18221,15 @@
 											"query": [
 												{
 													"key": "categoryId",
-													"value": "09c8b598-9f8b-7aa3-8f1a-8c7ee1398606"
+													"value": "urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37"
 												},
 												{
 													"key": "search",
-													"value": "minim"
+													"value": "commodo veniam consectetur culpa"
 												},
 												{
 													"key": "searchFields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												},
 												{
 													"key": "pageSize",
@@ -18245,7 +18245,7 @@
 												},
 												{
 													"key": "fields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												}
 											]
 										}
@@ -18260,7 +18260,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						},
@@ -18293,7 +18293,7 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "occaecat re,mollit",
+											"value": "ex aute nulla,consectetur",
 											"description": "The fields to return in a partial response.",
 											"disabled": true
 										}
@@ -18306,7 +18306,7 @@
 										},
 										{
 											"key": "queryId",
-											"value": "09c8b598-9f8b-7aa3-8f1a-8c7ee1398606",
+											"value": "urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37",
 											"description": "(Required) Query ID."
 										}
 									]
@@ -18326,7 +18326,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/:queryId?fields=eu ipsum,qui",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/:queryId?fields=est,laborum aute consequat",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -18343,7 +18343,7 @@
 											"query": [
 												{
 													"key": "fields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												}
 											],
 											"variable": [
@@ -18363,7 +18363,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"id\": \"96ac9555-173d-9c0a-3a68-0a0d15787aed\",\n \"name\": \"Duis\",\n \"type\": \"canned\",\n \"template\": \"Duis fugiat sint\",\n \"variables\": [\n  {\n   \"name\": \"esse aute Excepteur dolore\",\n   \"dataType\": \"text\",\n   \"value\": \"nostrud cupidatat ipsum\",\n   \"pivotType\": \"filePath\"\n  },\n  {\n   \"name\": \"in est quis\",\n   \"dataType\": \"boolean\",\n   \"value\": \"pariatur esse elit\",\n   \"pivotType\": \"deviceId\"\n  }\n ],\n \"categories\": [\n  {\n   \"id\": \"urn:uuid:8189eabd-c233-b6cd-1f28-224c6f8c8168\"\n  },\n  {\n   \"id\": \"cdcd6f6d-8f8f-a49f-13bc-0ca047a601d3\"\n  }\n ],\n \"code\": \"in non tempor\",\n \"description\": \"irure Duis consectetur velit reprehenderit\",\n \"tenant\": {\n  \"id\": \"urn:uuid:b365f50e-4d6e-6a9a-e810-606d72b14fcb\"\n },\n \"createdAt\": \"m\",\n \"createdBy\": {\n  \"id\": \"urn:uuid:510bfea1-4a5c-ddcf-e432-4f1b740486e8\",\n  \"type\": \"user\",\n  \"name\": \"nisi sunt cupidatat\",\n  \"accountId\": \"urn:uuid:5e0aca59-b0e8-e258-b9ff-819702dfb0ae\",\n  \"accountType\": \"partner\"\n },\n \"updatedAt\": \"ullamco dolor ad dolore\",\n \"updatedBy\": {\n  \"id\": \"urn:uuid:012e230f-9a40-a37b-621b-92ee2b4fd2db\",\n  \"type\": \"user\",\n  \"name\": \"anim sunt amet\",\n  \"accountId\": \"urn:uuid:893417a8-5791-68a0-8ff5-0f2a73d92ca1\",\n  \"accountType\": \"partner\"\n }\n}"
+									"body": "{\n \"id\": \"urn:uuid:126ac23a-3633-4ee2-0354-54160163c247\",\n \"name\": \"in ex eiusmod pariatur labore\",\n \"type\": \"custom\",\n \"template\": \"Ut labore\",\n \"variables\": [\n  {\n   \"name\": \"nostrud id dolore esse\",\n   \"dataType\": \"text\",\n   \"value\": \"deserunt laboris laborum irure\",\n   \"pivotType\": \"ipAddress\"\n  },\n  {\n   \"name\": \"exercitation quis pariatur\",\n   \"dataType\": \"text\",\n   \"value\": \"deserunt minim aute commodo adipisicing\",\n   \"pivotType\": \"registryKey\"\n  }\n ],\n \"categories\": [\n  {\n   \"id\": \"675da149-3812-1707-02c5-ecb3177c58e5\"\n  },\n  {\n   \"id\": \"urn:uuid:10c124f1-20ad-eff8-a69c-120ab53c454a\"\n  }\n ],\n \"code\": \"nulla Ut dolore\",\n \"description\": \"consequat id ex\",\n \"tenant\": {\n  \"id\": \"urn:uuid:f708a5a3-27de-7ed9-c537-2e8de3704ccc\"\n },\n \"createdAt\": \"irure pariatur\",\n \"createdBy\": {\n  \"id\": \"8db6868b-8afd-9038-3e26-87a9ebe9f6f5\",\n  \"type\": \"user\",\n  \"name\": \"dolore laborum Lorem\",\n  \"accountId\": \"6d3b5049-2c1b-5a9a-f929-ff73f26e590e\",\n  \"accountType\": \"partner\"\n },\n \"updatedAt\": \"aliqua cillum\",\n \"updatedBy\": {\n  \"id\": \"b8f23525-fe46-9387-4700-b4e106e3f321\",\n  \"type\": \"service\",\n  \"name\": \"tempor qui\",\n  \"accountId\": \"urn:uuid:024a2205-8b0a-ef70-be19-9b44252890f7\",\n  \"accountType\": \"partner\"\n }\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -18377,7 +18377,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/:queryId?fields=eu ipsum,qui",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/:queryId?fields=est,laborum aute consequat",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -18394,7 +18394,7 @@
 											"query": [
 												{
 													"key": "fields",
-													"value": "eu ipsum,qui"
+													"value": "est,laborum aute consequat"
 												}
 											],
 											"variable": [
@@ -18414,7 +18414,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						}
@@ -18510,7 +18510,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs?statuses=finished&statuses=started&page=1&pageSize=50&pageTotal=false&order=desc",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs?statuses=pending&statuses=pending&page=1&pageSize=50&pageTotal=false&order=desc",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -18527,11 +18527,11 @@
 											"query": [
 												{
 													"key": "statuses",
-													"value": "finished"
+													"value": "pending"
 												},
 												{
 													"key": "statuses",
-													"value": "started"
+													"value": "pending"
 												},
 												{
 													"key": "page",
@@ -18562,7 +18562,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"items\": [\n  {\n   \"id\": \"officia nostrud reprehend\",\n   \"createdAt\": \"in reprehenderit sint commodo ea\",\n   \"status\": \"pending\",\n   \"result\": \"failed\",\n   \"createdBy\": {\n    \"id\": \"14a30c73-3593-4688-fd33-eec8c84ad084\",\n    \"type\": \"user\",\n    \"name\": \"do magna enim consequat in\",\n    \"accountId\": \"urn:uuid:1d4d4aa1-315f-2515-675b-7d0e79d45db5\",\n    \"accountType\": \"tenant\"\n   },\n   \"expiresAt\": \"aute eiusmod aliqua magna\",\n   \"finishedAt\": \"cupidatat\",\n   \"name\": \"non do\",\n   \"query\": {\n    \"id\": \"urn:uuid:66234a01-48d7-608c-5014-6a947aa341cd\",\n    \"name\": \"dolor sint quis\",\n    \"code\": \"sint ut\"\n   },\n   \"category\": {\n    \"id\": \"urn:uuid:b811a721-f72a-8256-fbc4-2d2fac139c49\",\n    \"name\": \"esse consequat aliqua in\",\n    \"code\": \"cillum amet anim commodo ut\"\n   },\n   \"template\": \"ullamco culpa anim\",\n   \"variables\": [\n    {\n     \"name\": \"Excepteur aliqua pariatur\",\n     \"dataType\": \"boolean\",\n     \"value\": \"sit nulla magna\",\n     \"pivotType\": \"deviceId\"\n    },\n    {\n     \"name\": \"dolor consectetur enim sed in\",\n     \"dataType\": \"text\",\n     \"value\": \"adipisicing nulla mollit\",\n     \"pivotType\": \"sha256\"\n    }\n   ],\n   \"matchEndpoints\": {\n    \"filters\": [\n     {\n      \"ids\": [\n       \"urn:uuid:dd1d8ecf-61ad-b1a4-d314-39400e33666c\"\n      ]\n     }\n    ]\n   }\n  },\n  {\n   \"id\": \"dolore laboris\",\n   \"createdAt\": \"nulla\",\n   \"status\": \"started\",\n   \"result\": \"succeeded\",\n   \"createdBy\": {\n    \"id\": \"urn:uuid:a23e0c36-769a-c3dd-7805-325089abf4a9\",\n    \"type\": \"service\",\n    \"name\": \"eu exercitation cupidatat pariatur\",\n    \"accountId\": \"69374e48-f961-ed96-cea8-f72684e387a9\",\n    \"accountType\": \"partner\"\n   },\n   \"expiresAt\": \"anim\",\n   \"finishedAt\": \"Excepteur\",\n   \"name\": \"ad\",\n   \"query\": {\n    \"id\": \"c617b1ae-d2d0-83b2-7205-e69e49a0533e\",\n    \"name\": \"consectetur pariatur\",\n    \"code\": \"reprehenderit\"\n   },\n   \"category\": {\n    \"id\": \"65c7e108-49a5-4ab2-f042-1ffa067b695c\",\n    \"name\": \"sint dolor quis minim\",\n    \"code\": \"dolore minim\"\n   },\n   \"template\": \"dolore\",\n   \"variables\": [\n    {\n     \"name\": \"irure consectetur amet nulla\",\n     \"dataType\": \"text\",\n     \"value\": \"commodo minim culpa ea\",\n     \"pivotType\": \"deviceId\"\n    },\n    {\n     \"name\": \"anim Lorem ullamco\",\n     \"dataType\": \"double\",\n     \"value\": \"nostrud commodo pariatur id sed\",\n     \"pivotType\": \"filePath\"\n    }\n   ],\n   \"matchEndpoints\": {\n    \"filters\": [\n     {\n      \"ids\": [\n       \"31556866-5852-492e-90ba-a454bebd1d31\"\n      ]\n     }\n    ]\n   }\n  }\n ],\n \"pages\": {\n  \"current\": -30258948,\n  \"size\": -76546586,\n  \"maxSize\": 47227259,\n  \"total\": 83815966,\n  \"items\": -73314369\n }\n}"
+									"body": "{\n \"items\": [\n  {\n   \"id\": \"nulla exercitation ipsum occaecat cillum\",\n   \"createdAt\": \"nulla consectetur sunt enim\",\n   \"status\": \"finished\",\n   \"result\": \"canceled\",\n   \"createdBy\": {\n    \"id\": \"urn:uuid:7848b6c8-f8eb-46be-7f9e-cc959f3091e2\",\n    \"type\": \"service\",\n    \"name\": \"ulla\",\n    \"accountId\": \"urn:uuid:34a36df7-0d62-652c-098c-f6ffc35862a5\",\n    \"accountType\": \"tenant\"\n   },\n   \"expiresAt\": \"sint \",\n   \"finishedAt\": \"eu elit do nostrud\",\n   \"name\": \"Duis deserunt proident\",\n   \"query\": {\n    \"id\": \"urn:uuid:47668e3f-de97-06cf-5284-7986fa29d3d7\",\n    \"name\": \"in incididunt\",\n    \"code\": \"ut\"\n   },\n   \"category\": {\n    \"id\": \"urn:uuid:40a3364f-8b50-ba93-69dc-6d236c057ce5\",\n    \"name\": \"eu laboris tempor\",\n    \"code\": \"do amet ut Ut in\"\n   },\n   \"template\": \"aute dolore do Lorem\",\n   \"variables\": [\n    {\n     \"name\": \"laborum Lorem\",\n     \"dataType\": \"text\",\n     \"value\": \"in in amet elit\",\n     \"pivotType\": \"username\"\n    },\n    {\n     \"name\": \"labore et tempor\",\n     \"dataType\": \"text\",\n     \"value\": \"tempor dolore et Duis sint\",\n     \"pivotType\": \"url\"\n    }\n   ],\n   \"matchEndpoints\": {\n    \"filters\": [\n     {\n      \"ids\": [\n       \"3af5ed33-a9c0-d958-4a94-d5068d84c93e\"\n      ]\n     }\n    ]\n   }\n  },\n  {\n   \"id\": \"tempor et elit mollit\",\n   \"createdAt\": \"id cillum proi\",\n   \"status\": \"pending\",\n   \"result\": \"canceled\",\n   \"createdBy\": {\n    \"id\": \"b991313b-8e8e-73dc-ed26-83bf9bff1d29\",\n    \"type\": \"service\",\n    \"name\": \"cillum adipisicing laboris est laborum\",\n    \"accountId\": \"d72d2a79-a113-d751-c132-c68513e8e146\",\n    \"accountType\": \"tenant\"\n   },\n   \"expiresAt\": \"eiusmod sint dolore aliqua\",\n   \"finishedAt\": \"ea\",\n   \"name\": \"officia in\",\n   \"query\": {\n    \"id\": \"urn:uuid:4e743672-84b0-a162-1817-6f2e34e9bc76\",\n    \"name\": \"pariatur eiusmod nostrud\",\n    \"code\": \"dolore id consectetur in\"\n   },\n   \"category\": {\n    \"id\": \"0594dce8-f97e-b557-fedc-580da6070416\",\n    \"name\": \"mollit ullamco\",\n    \"code\": \"non officia\"\n   },\n   \"template\": \"ad in occaecat\",\n   \"variables\": [\n    {\n     \"name\": \"aute cons\",\n     \"dataType\": \"text\",\n     \"value\": \"proident nisi\",\n     \"pivotType\": \"sha256\"\n    },\n    {\n     \"name\": \"anim dolor\",\n     \"dataType\": \"boolean\",\n     \"value\": \"ad dolore\",\n     \"pivotType\": \"sha256\"\n    }\n   ],\n   \"matchEndpoints\": {\n    \"filters\": [\n     {\n      \"ids\": [\n       \"90f98548-d065-e933-f92a-73688e7fe0bf\"\n      ]\n     }\n    ]\n   }\n  }\n ],\n \"pages\": {\n  \"current\": -55660175,\n  \"size\": -58659403,\n  \"maxSize\": 42747126,\n  \"total\": -61903835,\n  \"items\": -26455989\n }\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -18576,7 +18576,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs?statuses=finished&statuses=started&page=1&pageSize=50&pageTotal=false&order=desc",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs?statuses=pending&statuses=pending&page=1&pageSize=50&pageTotal=false&order=desc",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -18593,11 +18593,11 @@
 											"query": [
 												{
 													"key": "statuses",
-													"value": "finished"
+													"value": "pending"
 												},
 												{
 													"key": "statuses",
-													"value": "started"
+													"value": "pending"
 												},
 												{
 													"key": "page",
@@ -18628,7 +18628,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						},
@@ -18649,7 +18649,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"savedQuery\": {\n        \"queryId\": \"bc3dadee-f976-e735-4f26-c2c3349d0ff4\",\n        \"categoryId\": \"9880eaaa-5e7e-d4b5-e269-9a0f1cacf1ec\"\n    },\n    \"adHocQuery\": {\n        \"template\": \"select pid, cmdline, sha256 from xdr_data where parent_name = '$$proc_name$$' and query_name = 'running_processes_windows_sophos'\",\n        \"name\": \"deserunt amet Ut\"\n    },\n    \"variables\": [\n        {\n            \"name\": \"veniam et dolor aliquip\",\n            \"dataType\": \"integer\",\n            \"value\": \"Duis velit\",\n            \"pivotType\": \"filePath\"\n        },\n        {\n            \"name\": \"dolore proident qui\",\n            \"dataType\": \"integer\",\n            \"value\": \"cillum ut\",\n            \"pivotType\": \"filePath\"\n        }\n    ],\n    \"matchEndpoints\": {\n        \"filters\": [\n            {\n                \"ids\": [\n                    \"0e48ce36-68b5-6c3f-e355-320aa7e56f01\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"savedQuery\": {\n        \"queryId\": \"urn:uuid:c203eb9f-76b4-0826-a793-249256ecd3a5\",\n        \"categoryId\": \"c1ef3aca-f01a-7ed2-1dc9-9d9d11f3d8be\"\n    },\n    \"adHocQuery\": {\n        \"template\": \"select pid, cmdline, sha256 from xdr_data where parent_name = '$$proc_name$$' and query_name = 'running_processes_windows_sophos'\",\n        \"name\": \"in esse aliqua veniam\"\n    },\n    \"variables\": [\n        {\n            \"name\": \"magna ullamco\",\n            \"dataType\": \"double\",\n            \"value\": \"ex irure\",\n            \"pivotType\": \"username\"\n        },\n        {\n            \"name\": \"dolore nostrud in\",\n            \"dataType\": \"text\",\n            \"value\": \"nostrud aliquip\",\n            \"pivotType\": \"registryKey\"\n        }\n    ],\n    \"matchEndpoints\": {\n        \"filters\": [\n            {\n                \"ids\": [\n                    \"ea3bbc28-39e3-261d-0902-0b32a82729ea\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs",
@@ -18674,7 +18674,7 @@
 										}
 									]
 								},
-								"description": "Run a query against the EDR Data Lake, passing the SQL code as the value of a field in the request JSON. The schema reference is available on https://developer.sophos.com."
+								"description": "Run a query against the Sophos Data Lake, passing the SQL code as the value of a field in the request JSON. The schema reference is available [here](https://docs.sophos.com/central/References/schemas/index.html?schema=xdr_schema_docs)."
 							},
 							"response": [
 								{
@@ -18690,7 +18690,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"savedQuery\": {\n        \"queryId\": \"3cc3b61a-4f49-fbf1-4c39-f4c78f942ccf\",\n        \"categoryId\": \"urn:uuid:ef927a74-c001-0b7f-d07a-aabe5ce1c1e4\"\n    },\n    \"adHocQuery\": {\n        \"template\": \"select pid, cmdline, sha256 from xdr_data where parent_name = '$$proc_name$$' and query_name = 'running_processes_windows_sophos'\",\n        \"name\": \"et culpa dolor Excepteur\"\n    },\n    \"variables\": [\n        {\n            \"name\": \"adipisicing reprehender\",\n            \"dataType\": \"dateTime\",\n            \"value\": \"eiusmod deserunt et dolor\",\n            \"pivotType\": \"url\"\n        },\n        {\n            \"name\": \"proident ad dolore incididunt\",\n            \"dataType\": \"boolean\",\n            \"value\": \"proident fugiat\",\n            \"pivotType\": \"registryKey\"\n        }\n    ],\n    \"matchEndpoints\": {\n        \"filters\": [\n            {\n                \"ids\": [\n                    \"9532d767-7d06-432a-5c8d-d0d03dc9948a\"\n                ]\n            }\n        ]\n    }\n}"
+											"raw": "{\n    \"savedQuery\": {\n        \"queryId\": \"urn:uuid:2ff06ac9-4029-17ef-a764-d1ef12067644\",\n        \"categoryId\": \"8ec5fb5d-f171-4a38-0ff9-03c6b72007ac\"\n    },\n    \"adHocQuery\": {\n        \"template\": \"select pid, cmdline, sha256 from xdr_data where parent_name = '$$proc_name$$' and query_name = 'running_processes_windows_sophos'\",\n        \"name\": \"officia elit sint eiusmod\"\n    },\n    \"variables\": [\n        {\n            \"name\": \"dolore\",\n            \"dataType\": \"integer\",\n            \"value\": \"do sit aute non\",\n            \"pivotType\": \"username\"\n        },\n        {\n            \"name\": \"consectetur in elit Ut ipsum\",\n            \"dataType\": \"integer\",\n            \"value\": \"amet exercitation Excepteur\",\n            \"pivotType\": \"filePath\"\n        }\n    ],\n    \"matchEndpoints\": {\n        \"filters\": [\n            {\n                \"ids\": [\n                    \"urn:uuid:69d81514-11dd-f964-8312-75fa84711bf4\"\n                ]\n            }\n        ]\n    }\n}"
 										},
 										"url": {
 											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs",
@@ -18719,7 +18719,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"id\": \"tempor cupidatat in ut\",\n \"createdAt\": \"magna labore ea est\",\n \"status\": \"finished\",\n \"result\": \"timedOut\",\n \"createdBy\": {\n  \"id\": \"urn:uuid:83e71a47-64c0-c645-9137-085cf157327a\",\n  \"type\": \"service\",\n  \"name\": \"sunt qui\",\n  \"accountId\": \"5a031ff0-9201-6cc4-e360-20dcdba3e119\",\n  \"accountType\": \"tenant\"\n },\n \"expiresAt\": \"incidi\",\n \"finishedAt\": \"proident ullamco\",\n \"name\": \"quis exercitation\",\n \"query\": {\n  \"id\": \"urn:uuid:f40251ad-17dc-6442-5da8-f6fe2976b7c4\",\n  \"name\": \"eu officia commodo incididunt\",\n  \"code\": \"elit dolore\"\n },\n \"category\": {\n  \"id\": \"urn:uuid:175b2358-0106-167b-b2c4-d2d395c86e68\",\n  \"name\": \"esse voluptate lab\",\n  \"code\": \"adipisicing et magna ad\"\n },\n \"template\": \"enim laborum\",\n \"variables\": [\n  {\n   \"name\": \"non deserunt veniam laboris\",\n   \"dataType\": \"double\",\n   \"value\": \"ex ut in\",\n   \"pivotType\": \"sophosPid\"\n  },\n  {\n   \"name\": \"occaecat dolore dolor\",\n   \"dataType\": \"text\",\n   \"value\": \"in veniam sed\",\n   \"pivotType\": \"deviceId\"\n  }\n ],\n \"matchEndpoints\": {\n  \"filters\": [\n   {\n    \"ids\": [\n     \"2b2a94ea-1c12-edf5-e6ea-a5f6b3a88485\"\n    ]\n   }\n  ]\n }\n}"
+									"body": "{\n \"id\": \"an\",\n \"createdAt\": \"est labore aliqua qui\",\n \"status\": \"started\",\n \"result\": \"timedOut\",\n \"createdBy\": {\n  \"id\": \"urn:uuid:952f3d61-8400-6eeb-b59f-193dd6ccdcb1\",\n  \"type\": \"user\",\n  \"name\": \"i\",\n  \"accountId\": \"4babf2d1-29cd-1705-7d76-b9fc7dfacc24\",\n  \"accountType\": \"organization\"\n },\n \"expiresAt\": \"est officia eu\",\n \"finishedAt\": \"sint proident esse consequat\",\n \"name\": \"exercitation\",\n \"query\": {\n  \"id\": \"urn:uuid:439fb80d-58e0-24e8-13bd-91634d0f8062\",\n  \"name\": \"cillum aliqua\",\n  \"code\": \"fugiat adipisicing dolor \"\n },\n \"category\": {\n  \"id\": \"urn:uuid:0d474880-fd0f-a224-5b4e-b693a5e93743\",\n  \"name\": \"enim velit Ut\",\n  \"code\": \"sint id\"\n },\n \"template\": \"Ut et commodo labore\",\n \"variables\": [\n  {\n   \"name\": \"qui labore dolore occaecat\",\n   \"dataType\": \"double\",\n   \"value\": \"cillum esse velit irure deserunt\",\n   \"pivotType\": \"deviceName\"\n  },\n  {\n   \"name\": \"in culpa eiusmod\",\n   \"dataType\": \"integer\",\n   \"value\": \"nostrud adipisicing\",\n   \"pivotType\": \"sophosPid\"\n  }\n ],\n \"matchEndpoints\": {\n  \"filters\": [\n   {\n    \"ids\": [\n     \"a0e06359-1686-8cb4-224c-4279342cc823\"\n    ]\n   }\n  ]\n }\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -18734,7 +18734,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"savedQuery\": {\n        \"queryId\": \"3cc3b61a-4f49-fbf1-4c39-f4c78f942ccf\",\n        \"categoryId\": \"urn:uuid:ef927a74-c001-0b7f-d07a-aabe5ce1c1e4\"\n    },\n    \"adHocQuery\": {\n        \"template\": \"select pid, cmdline, sha256 from xdr_data where parent_name = '$$proc_name$$' and query_name = 'running_processes_windows_sophos'\",\n        \"name\": \"et culpa dolor Excepteur\"\n    },\n    \"variables\": [\n        {\n            \"name\": \"adipisicing reprehender\",\n            \"dataType\": \"dateTime\",\n            \"value\": \"eiusmod deserunt et dolor\",\n            \"pivotType\": \"url\"\n        },\n        {\n            \"name\": \"proident ad dolore incididunt\",\n            \"dataType\": \"boolean\",\n            \"value\": \"proident fugiat\",\n            \"pivotType\": \"registryKey\"\n        }\n    ],\n    \"matchEndpoints\": {\n        \"filters\": [\n            {\n                \"ids\": [\n                    \"9532d767-7d06-432a-5c8d-d0d03dc9948a\"\n                ]\n            }\n        ]\n    }\n}"
+											"raw": "{\n    \"savedQuery\": {\n        \"queryId\": \"urn:uuid:2ff06ac9-4029-17ef-a764-d1ef12067644\",\n        \"categoryId\": \"8ec5fb5d-f171-4a38-0ff9-03c6b72007ac\"\n    },\n    \"adHocQuery\": {\n        \"template\": \"select pid, cmdline, sha256 from xdr_data where parent_name = '$$proc_name$$' and query_name = 'running_processes_windows_sophos'\",\n        \"name\": \"officia elit sint eiusmod\"\n    },\n    \"variables\": [\n        {\n            \"name\": \"dolore\",\n            \"dataType\": \"integer\",\n            \"value\": \"do sit aute non\",\n            \"pivotType\": \"username\"\n        },\n        {\n            \"name\": \"consectetur in elit Ut ipsum\",\n            \"dataType\": \"integer\",\n            \"value\": \"amet exercitation Excepteur\",\n            \"pivotType\": \"filePath\"\n        }\n    ],\n    \"matchEndpoints\": {\n        \"filters\": [\n            {\n                \"ids\": [\n                    \"urn:uuid:69d81514-11dd-f964-8312-75fa84711bf4\"\n                ]\n            }\n        ]\n    }\n}"
 										},
 										"url": {
 											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs",
@@ -18763,7 +18763,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						},
@@ -18802,7 +18802,7 @@
 										},
 										{
 											"key": "runId",
-											"value": "09c8b598-9f8b-7aa3-8f1a-8c7ee1398606",
+											"value": "urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37",
 											"description": "(Required) Query run ID."
 										}
 									]
@@ -18854,7 +18854,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"id\": \"tempor cupidatat in ut\",\n \"createdAt\": \"magna labore ea est\",\n \"status\": \"finished\",\n \"result\": \"timedOut\",\n \"createdBy\": {\n  \"id\": \"urn:uuid:83e71a47-64c0-c645-9137-085cf157327a\",\n  \"type\": \"service\",\n  \"name\": \"sunt qui\",\n  \"accountId\": \"5a031ff0-9201-6cc4-e360-20dcdba3e119\",\n  \"accountType\": \"tenant\"\n },\n \"expiresAt\": \"incidi\",\n \"finishedAt\": \"proident ullamco\",\n \"name\": \"quis exercitation\",\n \"query\": {\n  \"id\": \"urn:uuid:f40251ad-17dc-6442-5da8-f6fe2976b7c4\",\n  \"name\": \"eu officia commodo incididunt\",\n  \"code\": \"elit dolore\"\n },\n \"category\": {\n  \"id\": \"urn:uuid:175b2358-0106-167b-b2c4-d2d395c86e68\",\n  \"name\": \"esse voluptate lab\",\n  \"code\": \"adipisicing et magna ad\"\n },\n \"template\": \"enim laborum\",\n \"variables\": [\n  {\n   \"name\": \"non deserunt veniam laboris\",\n   \"dataType\": \"double\",\n   \"value\": \"ex ut in\",\n   \"pivotType\": \"sophosPid\"\n  },\n  {\n   \"name\": \"occaecat dolore dolor\",\n   \"dataType\": \"text\",\n   \"value\": \"in veniam sed\",\n   \"pivotType\": \"deviceId\"\n  }\n ],\n \"matchEndpoints\": {\n  \"filters\": [\n   {\n    \"ids\": [\n     \"2b2a94ea-1c12-edf5-e6ea-a5f6b3a88485\"\n    ]\n   }\n  ]\n }\n}"
+									"body": "{\n \"id\": \"an\",\n \"createdAt\": \"est labore aliqua qui\",\n \"status\": \"started\",\n \"result\": \"timedOut\",\n \"createdBy\": {\n  \"id\": \"urn:uuid:952f3d61-8400-6eeb-b59f-193dd6ccdcb1\",\n  \"type\": \"user\",\n  \"name\": \"i\",\n  \"accountId\": \"4babf2d1-29cd-1705-7d76-b9fc7dfacc24\",\n  \"accountType\": \"organization\"\n },\n \"expiresAt\": \"est officia eu\",\n \"finishedAt\": \"sint proident esse consequat\",\n \"name\": \"exercitation\",\n \"query\": {\n  \"id\": \"urn:uuid:439fb80d-58e0-24e8-13bd-91634d0f8062\",\n  \"name\": \"cillum aliqua\",\n  \"code\": \"fugiat adipisicing dolor \"\n },\n \"category\": {\n  \"id\": \"urn:uuid:0d474880-fd0f-a224-5b4e-b693a5e93743\",\n  \"name\": \"enim velit Ut\",\n  \"code\": \"sint id\"\n },\n \"template\": \"Ut et commodo labore\",\n \"variables\": [\n  {\n   \"name\": \"qui labore dolore occaecat\",\n   \"dataType\": \"double\",\n   \"value\": \"cillum esse velit irure deserunt\",\n   \"pivotType\": \"deviceName\"\n  },\n  {\n   \"name\": \"in culpa eiusmod\",\n   \"dataType\": \"integer\",\n   \"value\": \"nostrud adipisicing\",\n   \"pivotType\": \"sophosPid\"\n  }\n ],\n \"matchEndpoints\": {\n  \"filters\": [\n   {\n    \"ids\": [\n     \"a0e06359-1686-8cb4-224c-4279342cc823\"\n    ]\n   }\n  ]\n }\n}"
 								},
 								{
 									"name": "Can't find query run.",
@@ -18900,7 +18900,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -18946,7 +18946,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						},
@@ -18994,7 +18994,7 @@
 										},
 										{
 											"key": "runId",
-											"value": "09c8b598-9f8b-7aa3-8f1a-8c7ee1398606",
+											"value": "urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37",
 											"description": "(Required) Query run ID."
 										}
 									]
@@ -19102,7 +19102,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -19153,7 +19153,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						},
@@ -19188,7 +19188,7 @@
 									"query": [
 										{
 											"key": "pageFromKey",
-											"value": "minim",
+											"value": "commodo veniam consectetur culpa",
 											"description": "The key of the item from where to fetch a page.",
 											"disabled": true
 										},
@@ -19207,7 +19207,7 @@
 										},
 										{
 											"key": "runId",
-											"value": "09c8b598-9f8b-7aa3-8f1a-8c7ee1398606",
+											"value": "urn:uuid:ecb22904-e54d-55c0-35e2-49c9edca6b37",
 											"description": "(Required) Query run ID."
 										}
 									]
@@ -19227,7 +19227,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs/:runId/results?pageFromKey=minim&pageSize=50",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs/:runId/results?pageFromKey=commodo veniam consectetur culpa&pageSize=50",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -19246,7 +19246,7 @@
 											"query": [
 												{
 													"key": "pageFromKey",
-													"value": "minim"
+													"value": "commodo veniam consectetur culpa"
 												},
 												{
 													"key": "pageSize",
@@ -19270,7 +19270,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"metadata\": {\n  \"columns\": [\n   {\n    \"name\": \"culpa Excepteur incididunt\",\n    \"type\": \"ex nisi laborum cillum\"\n   },\n   {\n    \"name\": \"nulla cillum\",\n    \"type\": \"occaecat culpa ullamco cillum\"\n   }\n  ]\n },\n \"pages\": {\n  \"size\": -47005851,\n  \"maxSize\": 42569602,\n  \"fromKey\": \"Excepteur ea\",\n  \"nextKey\": \"in\"\n }\n}"
+									"body": "{\n \"metadata\": {\n  \"columns\": [\n   {\n    \"name\": \"ea\",\n    \"type\": \"velit est Ut quis\"\n   },\n   {\n    \"name\": \"ex sed\",\n    \"type\": \"dolore\"\n   }\n  ]\n },\n \"pages\": {\n  \"size\": 28496117,\n  \"maxSize\": -78577058,\n  \"fromKey\": \"culpa\",\n  \"nextKey\": \"aliquip do dolore commodo\"\n }\n}"
 								},
 								{
 									"name": "Can't find query run.",
@@ -19284,7 +19284,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs/:runId/results?pageFromKey=minim&pageSize=50",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs/:runId/results?pageFromKey=commodo veniam consectetur culpa&pageSize=50",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -19303,7 +19303,7 @@
 											"query": [
 												{
 													"key": "pageFromKey",
-													"value": "minim"
+													"value": "commodo veniam consectetur culpa"
 												},
 												{
 													"key": "pageSize",
@@ -19327,7 +19327,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -19341,7 +19341,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs/:runId/results?pageFromKey=minim&pageSize=50",
+											"raw": "https://api-{{dataRegion}}.central.sophos.com/xdr-query/v1/queries/runs/:runId/results?pageFromKey=commodo veniam consectetur culpa&pageSize=50",
 											"protocol": "https",
 											"host": [
 												"api-{{dataRegion}}",
@@ -19360,7 +19360,7 @@
 											"query": [
 												{
 													"key": "pageFromKey",
-													"value": "minim"
+													"value": "commodo veniam consectetur culpa"
 												},
 												{
 													"key": "pageSize",
@@ -19384,12 +19384,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"qui\",\n \"message\": \"pariatur nisi\",\n \"correlationId\": \"urn:uuid:95db9895-d839-d1bf-658d-b097e783799c\",\n \"code\": \"elit\",\n \"createdAt\": \"deserunt anim aliqua\",\n \"requestId\": \"0d3a6239-244d-be48-b99e-c825dd7ebe9e\",\n \"docUrl\": \"http://sUWXxUUOVkMYZtyElBtqDaILKeHGt.oyyqc1iOmre8G+FE52GKuumqbTPHbZim0RcJz\"\n}"
+									"body": "{\n \"error\": \"velit ut voluptate\",\n \"message\": \"exercitation est ullamco dolor proident\",\n \"correlationId\": \"urn:uuid:46352951-b726-f648-9c1b-55e0bae69d82\",\n \"code\": \"cupidatat nostrud incididunt\",\n \"createdAt\": \"nulla commodo\",\n \"requestId\": \"urn:uuid:42b77e8f-e71e-30b5-f2dc-0cbc4081ddbf\",\n \"docUrl\": \"http://DGfNVpgAhKUECRuQTZXWWpBwemUdZlU.qzW997REuBtPSZwb.MtXFGmOcmidUIizzXcc52VF9KIlJ6mmunBzep,-F873fP2c\"\n}"
 								}
 							]
 						}
 					],
-					"description": "Run queries against Sophos EDR Data Lake."
+					"description": "Run queries against the Sophos Data Lake."
 				}
 			]
 		}
