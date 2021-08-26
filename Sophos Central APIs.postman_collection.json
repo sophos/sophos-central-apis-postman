@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9b73cf79-23b1-4857-81ba-64328eaca0e3",
+		"_postman_id": "4394fdeb-cc48-4c27-8def-9e3468b0ff5a",
 		"name": "Sophos Central APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -52,6 +52,55 @@
 									"type": "text"
 								}
 							]
+						},
+						"url": {
+							"raw": "https://id.sophos.com/api/v2/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"id",
+								"sophos",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\",\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"{{refresh_token}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "https://id.sophos.com/api/v2/oauth2/token",
@@ -190,7 +239,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"ut\",\n    \"dataGeography\": \"DE\",\n    \"contact\": {\n        \"firstName\": \"veli\",\n        \"lastName\": \"proident pariatur ullamco incididunt\",\n        \"email\": \"1ou@PwuyIgqnXcPKyMAwXFCmRNc.cwko\",\n        \"phone\": \"irure laboris mollit\",\n        \"address\": {\n            \"address1\": \"ullamco dolore nostrud Lorem veniam\",\n            \"city\": \"Excepteur aliqua do nostrud\",\n            \"countryCode\": \"tempor qui\",\n            \"postalCode\": \"Lorem do pariatur\",\n            \"address2\": \"irure culpa conseq\",\n            \"address3\": \"qui voluptate\",\n            \"state\": \"consectetur ullamco labore culpa\"\n        },\n        \"mobile\": \"minim cupidatat\",\n        \"fax\": \"laboris\"\n    },\n    \"billingType\": \"usage\"\n}"
+									"raw": "{\n    \"name\": \"aliqua el\",\n    \"dataGeography\": \"US\",\n    \"contact\": {\n        \"firstName\": \"esse ut nulla in\",\n        \"lastName\": \"occaecat eiusmod\",\n        \"email\": \"lZNnVort@nptThs.nps\",\n        \"phone\": \"Ut aliquip incididunt\",\n        \"address\": {\n            \"address1\": \"dolore aliquip id\",\n            \"city\": \"nisi laboris deserunt in consectetur\",\n            \"countryCode\": \"minim fugiat anim labore exercitation\",\n            \"postalCode\": \"Duis\",\n            \"address2\": \"magna fugiat Duis\",\n            \"address3\": \"minim dolor adipisicing anim\",\n            \"state\": \"quis ipsum cupidatat\"\n        },\n        \"mobile\": \"labore esse Lorem\",\n        \"fax\": \"in do ad culpa\"\n    },\n    \"billingType\": \"usage\"\n}"
 								},
 								"url": {
 									"raw": "https://api.central.sophos.com/partner/v1/tenants",
@@ -205,6 +254,14 @@
 										"partner",
 										"v1",
 										"tenants"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										}
 									]
 								},
 								"description": "Create a new tenant."
@@ -223,10 +280,10 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"name\": \"ut\",\n    \"dataGeography\": \"DE\",\n    \"contact\": {\n        \"firstName\": \"veli\",\n        \"lastName\": \"proident pariatur ullamco incididunt\",\n        \"email\": \"1ou@PwuyIgqnXcPKyMAwXFCmRNc.cwko\",\n        \"phone\": \"irure laboris mollit\",\n        \"address\": {\n            \"address1\": \"ullamco dolore nostrud Lorem veniam\",\n            \"city\": \"Excepteur aliqua do nostrud\",\n            \"countryCode\": \"tempor qui\",\n            \"postalCode\": \"Lorem do pariatur\",\n            \"address2\": \"irure culpa conseq\",\n            \"address3\": \"qui voluptate\",\n            \"state\": \"consectetur ullamco labore culpa\"\n        },\n        \"mobile\": \"minim cupidatat\",\n        \"fax\": \"laboris\"\n    },\n    \"billingType\": \"usage\"\n}"
+											"raw": "{\n    \"name\": \"aliqua el\",\n    \"dataGeography\": \"US\",\n    \"contact\": {\n        \"firstName\": \"esse ut nulla in\",\n        \"lastName\": \"occaecat eiusmod\",\n        \"email\": \"lZNnVort@nptThs.nps\",\n        \"phone\": \"Ut aliquip incididunt\",\n        \"address\": {\n            \"address1\": \"dolore aliquip id\",\n            \"city\": \"nisi laboris deserunt in consectetur\",\n            \"countryCode\": \"minim fugiat anim labore exercitation\",\n            \"postalCode\": \"Duis\",\n            \"address2\": \"magna fugiat Duis\",\n            \"address3\": \"minim dolor adipisicing anim\",\n            \"state\": \"quis ipsum cupidatat\"\n        },\n        \"mobile\": \"labore esse Lorem\",\n        \"fax\": \"in do ad culpa\"\n    },\n    \"billingType\": \"usage\"\n}"
 										},
 										"url": {
-											"raw": "https://api.central.sophos.com/partner/v1/tenants",
+											"raw": "https://api.central.sophos.com/partner/v1/tenants?fields=non quis,in veniam ut nulla",
 											"protocol": "https",
 											"host": [
 												"api",
@@ -238,6 +295,12 @@
 												"partner",
 												"v1",
 												"tenants"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
 											]
 										}
 									},
@@ -251,7 +314,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"id\": \"urn:uuid:1737465d-b6f9-80d7-26c5-f246fd939aa7\",\n \"name\": \"ipsum deserunt exercitation eiusmod\",\n \"dataGeography\": \"US\",\n \"dataRegion\": \"us03\",\n \"billingType\": \"term\",\n \"partner\": {\n  \"id\": \"16d398db-a192-354f-d729-964a7fa54ebe\"\n },\n \"apiHost\": \"https://sRTSdm.asOYwdOncplps6WgtOFZLcE2oQagj+JN4m+bWX-G21r+3vZvBV8uoFdHvvA92F23s\",\n \"organization\": {\n  \"id\": \"1055b8df-237d-087d-8e1d-b68fb4b7858a\"\n }\n}"
+									"body": "{\n \"id\": \"urn:uuid:c2ec201b-404f-05ac-d3b3-1684d7601c1e\",\n \"name\": \"dolor velit commodo elit\",\n \"dataGeography\": \"US\",\n \"dataRegion\": \"us02\",\n \"billingType\": \"term\",\n \"partner\": {\n  \"id\": \"urn:uuid:faf61d3a-34aa-5b37-6f18-bee8561936bf\"\n },\n \"apiHost\": \"http://CQmEsV.ybvkdHvO\",\n \"organization\": {\n  \"id\": \"0ea13f5a-d18f-4483-c7ef-92fb63133fb7\"\n }\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -266,10 +329,10 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"name\": \"ut\",\n    \"dataGeography\": \"DE\",\n    \"contact\": {\n        \"firstName\": \"veli\",\n        \"lastName\": \"proident pariatur ullamco incididunt\",\n        \"email\": \"1ou@PwuyIgqnXcPKyMAwXFCmRNc.cwko\",\n        \"phone\": \"irure laboris mollit\",\n        \"address\": {\n            \"address1\": \"ullamco dolore nostrud Lorem veniam\",\n            \"city\": \"Excepteur aliqua do nostrud\",\n            \"countryCode\": \"tempor qui\",\n            \"postalCode\": \"Lorem do pariatur\",\n            \"address2\": \"irure culpa conseq\",\n            \"address3\": \"qui voluptate\",\n            \"state\": \"consectetur ullamco labore culpa\"\n        },\n        \"mobile\": \"minim cupidatat\",\n        \"fax\": \"laboris\"\n    },\n    \"billingType\": \"usage\"\n}"
+											"raw": "{\n    \"name\": \"aliqua el\",\n    \"dataGeography\": \"US\",\n    \"contact\": {\n        \"firstName\": \"esse ut nulla in\",\n        \"lastName\": \"occaecat eiusmod\",\n        \"email\": \"lZNnVort@nptThs.nps\",\n        \"phone\": \"Ut aliquip incididunt\",\n        \"address\": {\n            \"address1\": \"dolore aliquip id\",\n            \"city\": \"nisi laboris deserunt in consectetur\",\n            \"countryCode\": \"minim fugiat anim labore exercitation\",\n            \"postalCode\": \"Duis\",\n            \"address2\": \"magna fugiat Duis\",\n            \"address3\": \"minim dolor adipisicing anim\",\n            \"state\": \"quis ipsum cupidatat\"\n        },\n        \"mobile\": \"labore esse Lorem\",\n        \"fax\": \"in do ad culpa\"\n    },\n    \"billingType\": \"usage\"\n}"
 										},
 										"url": {
-											"raw": "https://api.central.sophos.com/partner/v1/tenants",
+											"raw": "https://api.central.sophos.com/partner/v1/tenants?fields=non quis,in veniam ut nulla",
 											"protocol": "https",
 											"host": [
 												"api",
@@ -281,6 +344,12 @@
 												"partner",
 												"v1",
 												"tenants"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
 											]
 										}
 									},
@@ -294,7 +363,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"ex\",\n \"message\": \"sint aute\",\n \"correlationId\": \"urn:uuid:3eba53fb-a626-204d-7d2e-2fa5c6a7033c\",\n \"code\": \"incididunt in\",\n \"createdAt\": \"incididunt ad\",\n \"requestId\": \"urn:uuid:0ec3d7fc-40ac-0a84-6470-f528000a9bd8\",\n \"docUrl\": \"http://QVyMLdItRiMcDFlkmlQzO.yvwawXomE5\"\n}"
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
 								}
 							]
 						},
@@ -324,6 +393,12 @@
 										"tenants"
 									],
 									"query": [
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										},
 										{
 											"key": "page",
 											"value": "1",
@@ -359,7 +434,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.central.sophos.com/partner/v1/tenants?page=1&pageSize=50&pageTotal=false",
+											"raw": "https://api.central.sophos.com/partner/v1/tenants?fields=non quis,in veniam ut nulla&page=1&pageSize=50&pageTotal=false",
 											"protocol": "https",
 											"host": [
 												"api",
@@ -373,6 +448,10 @@
 												"tenants"
 											],
 											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
 												{
 													"key": "page",
 													"value": "1"
@@ -398,7 +477,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"items\": [\n  {\n   \"id\": \"urn:uuid:fdd06099-b81f-a607-f138-a81b1fc2f715\",\n   \"name\": \"tempor consect\",\n   \"dataGeography\": \"US\",\n   \"dataRegion\": \"eu02\",\n   \"billingType\": \"term\",\n   \"partner\": {\n    \"id\": \"6e378367-b5a2-b2a0-7cf6-c863321a24ad\"\n   },\n   \"apiHost\": \"http://cUgcShNhdwzlObiFbaIyIOgufIA.dzwqIlbCxEZob-6\",\n   \"organization\": {\n    \"id\": \"36a3979c-2d48-9492-4c62-433ede076dec\"\n   }\n  },\n  {\n   \"id\": \"c46a70c8-4e11-5c5a-6791-ca0b43d09312\",\n   \"name\": \"incididunt laborum elit\",\n   \"dataGeography\": \"IE\",\n   \"dataRegion\": \"us03\",\n   \"billingType\": \"term\",\n   \"partner\": {\n    \"id\": \"bb87cb8a-5e17-1685-b0aa-ecd92d7309ad\"\n   },\n   \"apiHost\": \"https://NcsTkgjTek.ftthWUKxqvkBvnYZ0kirp1omzg2pYyuSP.2dWYcXFhJb,AV,O0yXGr8iV\",\n   \"organization\": {\n    \"id\": \"urn:uuid:fa8600fe-3497-65a6-cd88-ecb8b9aa5bf6\"\n   }\n  }\n ],\n \"pages\": {\n  \"current\": 53019738,\n  \"size\": -91453483,\n  \"maxSize\": 5006702,\n  \"total\": 32215008,\n  \"items\": -92193131\n }\n}"
+									"body": "{\n \"items\": [\n  {\n   \"id\": \"urn:uuid:de2d4bde-7655-da02-e6a6-eea9d6968084\",\n   \"name\": \"Lorem laboris\",\n   \"dataGeography\": \"JP\",\n   \"dataRegion\": \"jp01\",\n   \"billingType\": \"usage\",\n   \"partner\": {\n    \"id\": \"e90f2f9f-e7cd-2d0e-b25b-6a346ef8b084\"\n   },\n   \"apiHost\": \"https://zZcbEUNovGGAonwJfDKxi.hgPx1bpSrjbU\",\n   \"organization\": {\n    \"id\": \"urn:uuid:78f57df7-c58d-3457-d204-19f150257507\"\n   }\n  },\n  {\n   \"id\": \"urn:uuid:8677e82d-8d09-960d-8e90-6870068d9b2e\",\n   \"name\": \"do fugiat nostrud\",\n   \"dataGeography\": \"IE\",\n   \"dataRegion\": \"au01\",\n   \"billingType\": \"term\",\n   \"partner\": {\n    \"id\": \"urn:uuid:d4c239d1-e7a8-1b4e-21a6-88f52a4b5400\"\n   },\n   \"apiHost\": \"https://pfbdCuEtTqfuaUJLtFpAMBWVciyfBoar.vvraWEBl7b3aZP1jB-nzlWPI\",\n   \"organization\": {\n    \"id\": \"urn:uuid:403c8183-d87a-699a-6f26-d69e32063ef1\"\n   }\n  }\n ],\n \"pages\": {\n  \"current\": 33113962,\n  \"size\": -99348366,\n  \"maxSize\": -21093705,\n  \"total\": -21866290,\n  \"items\": -22298301\n }\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -412,7 +491,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.central.sophos.com/partner/v1/tenants?page=1&pageSize=50&pageTotal=false",
+											"raw": "https://api.central.sophos.com/partner/v1/tenants?fields=non quis,in veniam ut nulla&page=1&pageSize=50&pageTotal=false",
 											"protocol": "https",
 											"host": [
 												"api",
@@ -426,6 +505,10 @@
 												"tenants"
 											],
 											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
 												{
 													"key": "page",
 													"value": "1"
@@ -451,7 +534,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"ex\",\n \"message\": \"sint aute\",\n \"correlationId\": \"urn:uuid:3eba53fb-a626-204d-7d2e-2fa5c6a7033c\",\n \"code\": \"incididunt in\",\n \"createdAt\": \"incididunt ad\",\n \"requestId\": \"urn:uuid:0ec3d7fc-40ac-0a84-6470-f528000a9bd8\",\n \"docUrl\": \"http://QVyMLdItRiMcDFlkmlQzO.yvwawXomE5\"\n}"
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
 								}
 							]
 						},
@@ -481,10 +564,18 @@
 										"tenants",
 										":tenantId"
 									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										}
+									],
 									"variable": [
 										{
 											"key": "tenantId",
-											"value": "urn:uuid:b0bd1ace-72cf-eebc-bbb0-cdeae371d0bd",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
 											"description": "(Required) Tenant ID."
 										}
 									]
@@ -504,7 +595,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.central.sophos.com/partner/v1/tenants/:tenantId",
+											"raw": "https://api.central.sophos.com/partner/v1/tenants/:tenantId?fields=non quis,in veniam ut nulla",
 											"protocol": "https",
 											"host": [
 												"api",
@@ -517,6 +608,12 @@
 												"v1",
 												"tenants",
 												":tenantId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
 											],
 											"variable": [
 												{
@@ -535,7 +632,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"id\": \"b9d034e5-e6df-3bf9-c48d-04ad738a948c\",\n \"name\": \"incididunt Duis anim pariatur\",\n \"dataGeography\": \"IE\",\n \"dataRegion\": \"us02\",\n \"billingType\": \"term\",\n \"partner\": {\n  \"id\": \"urn:uuid:d4189291-8fef-55f8-3f28-e64675667173\"\n },\n \"apiHost\": \"https://LovNzJRcfUtDVOhAcPQsn.fxhypqWJ7GU9jYQB0Hhyz5ewNc0yWjSeOpfZ+m\",\n \"organization\": {\n  \"id\": \"urn:uuid:0357c5e2-9321-f7b7-b9ef-ab834ba8b09c\"\n }\n}"
+									"body": "{\n \"id\": \"urn:uuid:c2ec201b-404f-05ac-d3b3-1684d7601c1e\",\n \"name\": \"dolor velit commodo elit\",\n \"dataGeography\": \"US\",\n \"dataRegion\": \"us02\",\n \"billingType\": \"term\",\n \"partner\": {\n  \"id\": \"urn:uuid:faf61d3a-34aa-5b37-6f18-bee8561936bf\"\n },\n \"apiHost\": \"http://CQmEsV.ybvkdHvO\",\n \"organization\": {\n  \"id\": \"0ea13f5a-d18f-4483-c7ef-92fb63133fb7\"\n }\n}"
 								},
 								{
 									"name": "Unexpected error.",
@@ -549,7 +646,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.central.sophos.com/partner/v1/tenants/:tenantId",
+											"raw": "https://api.central.sophos.com/partner/v1/tenants/:tenantId?fields=non quis,in veniam ut nulla",
 											"protocol": "https",
 											"host": [
 												"api",
@@ -562,6 +659,12 @@
 												"v1",
 												"tenants",
 												":tenantId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
 											],
 											"variable": [
 												{
@@ -580,12 +683,2882 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n \"error\": \"ex\",\n \"message\": \"sint aute\",\n \"correlationId\": \"urn:uuid:3eba53fb-a626-204d-7d2e-2fa5c6a7033c\",\n \"code\": \"incididunt in\",\n \"createdAt\": \"incididunt ad\",\n \"requestId\": \"urn:uuid:0ec3d7fc-40ac-0a84-6470-f528000a9bd8\",\n \"docUrl\": \"http://QVyMLdItRiMcDFlkmlQzO.yvwawXomE5\"\n}"
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
 								}
 							]
 						}
 					],
 					"description": "Create new tenants, enumerate them or view tenant details."
+				},
+				{
+					"name": "Billing report",
+					"item": [
+						{
+							"name": "Get usage report",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/billing/usage/:year/:month",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"billing",
+										"usage",
+										":year",
+										":month"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "50",
+											"description": "The size of the page requested.",
+											"disabled": true
+										},
+										{
+											"key": "pageFromKey",
+											"value": "pariatur officia magna nisi",
+											"description": "The key of the item from where to fetch a page.",
+											"disabled": true
+										},
+										{
+											"key": "pageTotal",
+											"value": "false",
+											"description": "Whether the number of pages should be calculated and returned in the response.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										},
+										{
+											"key": "contactEmail",
+											"value": "non quis,in veniam ut nulla",
+											"description": "Tenant email for contact.",
+											"disabled": true
+										},
+										{
+											"key": "accountId",
+											"value": "urn:uuid:1907fe8a-c22f-5fcb-4399-3a069c313efc,urn:uuid:6ba50bbf-09c1-07f2-036b-03af45a32de1",
+											"description": "Tenant Id.",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "year",
+											"value": "2021",
+											"description": "(Required) Year."
+										},
+										{
+											"key": "month",
+											"value": "8",
+											"description": "(Required) Month of the year."
+										}
+									]
+								},
+								"description": "Usage report."
+							},
+							"response": [
+								{
+									"name": "Billing report.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/billing/usage/:year/:month?pageSize=50&pageFromKey=pariatur officia magna nisi&pageTotal=false&fields=non quis,in veniam ut nulla&contactEmail=non quis,in veniam ut nulla&accountId=urn:uuid:1907fe8a-c22f-5fcb-4399-3a069c313efc,urn:uuid:6ba50bbf-09c1-07f2-036b-03af45a32de1",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"billing",
+												"usage",
+												":year",
+												":month"
+											],
+											"query": [
+												{
+													"key": "pageSize",
+													"value": "50"
+												},
+												{
+													"key": "pageFromKey",
+													"value": "pariatur officia magna nisi"
+												},
+												{
+													"key": "pageTotal",
+													"value": "false"
+												},
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "contactEmail",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "accountId",
+													"value": "urn:uuid:1907fe8a-c22f-5fcb-4399-3a069c313efc,urn:uuid:6ba50bbf-09c1-07f2-036b-03af45a32de1"
+												}
+											],
+											"variable": [
+												{
+													"key": "year"
+												},
+												{
+													"key": "month"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"items\": [\n  {\n   \"partnerAccountId\": \"d31ab2df-7005-4c06-bd7d-2bc8de44be06\",\n   \"partnerEdiAccountNumber\": \"1231231\",\n   \"partnerAccountName\": \"ABC Corp\",\n   \"billingStartDate\": \"2021-01-31\",\n   \"billingEndDate\": \"2021-04-31\",\n   \"orderNumber\": \"OrderID-123123123\",\n   \"orderLineItemNumber\": \"OrderLine-12312312\",\n   \"accountNumberOrSerialNumber\": \"C01234ABC1CDEF2\",\n   \"productDescription\": \"SW/Virtual EnterpriseGuard Plus - UP TO 2 CORES & 4GB RAM - 500-999 DEVICES - MSP Monthly\",\n   \"productGroup\": \"User\",\n   \"sku\": \"CEAZ1CSMG\",\n   \"billableQuantity\": 20,\n   \"externalId\": \"17b80674-f2cb-4b4f-a134-54ee24fbd5b3\",\n   \"accountId\": \"718b6047-2fbc-b4f4-1a43-45ee42bf5d3b\",\n   \"accountStatus\": \"suspended\",\n   \"actualQuantity\": 20,\n   \"productCode\": \"CIXA-MSP\",\n   \"assignedAccountIdentifier\": \"Safelog\",\n   \"contactName\": \"John Smith\",\n   \"contactEmail\": \"john.smith@example.com\",\n   \"contactStreet\": \"1 Smith Avenue\",\n   \"contactCity\": \"Smithfield\",\n   \"contactCountry\": \"USA\",\n   \"contactZip\": \"32932\",\n   \"unitMsrpCurrency\": \"USD\",\n   \"unitMsrp\": \"1.40\",\n   \"unitPriceCurrency\": \"USD\",\n   \"unitPrice\": \"1.40\",\n   \"netPriceCurrency\": \"USD\",\n   \"netPrice\": \"1.40\",\n   \"priceWithTaxesCurrency\": \"USD\",\n   \"priceWithTaxes\": \"1.40\",\n   \"distributorAccountName\": \"ABC Inc.\",\n   \"additionalDiscountPercentage\": 25,\n   \"orderedQuantity\": 20\n  },\n  {\n   \"partnerAccountId\": \"d31ab2df-7005-4c06-bd7d-2bc8de44be06\",\n   \"partnerEdiAccountNumber\": \"1231231\",\n   \"partnerAccountName\": \"ABC Corp\",\n   \"billingStartDate\": \"2021-01-31\",\n   \"billingEndDate\": \"2021-04-31\",\n   \"orderNumber\": \"OrderID-123123123\",\n   \"orderLineItemNumber\": \"OrderLine-12312312\",\n   \"accountNumberOrSerialNumber\": \"C01234ABC1CDEF2\",\n   \"productDescription\": \"SW/Virtual EnterpriseGuard Plus - UP TO 2 CORES & 4GB RAM - 500-999 DEVICES - MSP Monthly\",\n   \"productGroup\": \"User\",\n   \"sku\": \"CEAZ1CSMG\",\n   \"billableQuantity\": 20,\n   \"externalId\": \"17b80674-f2cb-4b4f-a134-54ee24fbd5b3\",\n   \"accountId\": \"718b6047-2fbc-b4f4-1a43-45ee42bf5d3b\",\n   \"accountStatus\": \"active\",\n   \"actualQuantity\": 20,\n   \"productCode\": \"CIXA-MSP\",\n   \"assignedAccountIdentifier\": \"Safelog\",\n   \"contactName\": \"John Smith\",\n   \"contactEmail\": \"john.smith@example.com\",\n   \"contactStreet\": \"1 Smith Avenue\",\n   \"contactCity\": \"Smithfield\",\n   \"contactCountry\": \"USA\",\n   \"contactZip\": \"32932\",\n   \"unitMsrpCurrency\": \"USD\",\n   \"unitMsrp\": \"1.40\",\n   \"unitPriceCurrency\": \"USD\",\n   \"unitPrice\": \"1.40\",\n   \"netPriceCurrency\": \"USD\",\n   \"netPrice\": \"1.40\",\n   \"priceWithTaxesCurrency\": \"USD\",\n   \"priceWithTaxes\": \"1.40\",\n   \"distributorAccountName\": \"ABC Inc.\",\n   \"additionalDiscountPercentage\": 25,\n   \"orderedQuantity\": 20\n  }\n ],\n \"pages\": {\n  \"maxSize\": -23726815,\n  \"size\": 54042777,\n  \"fromKey\": \"in ad\",\n  \"nextKey\": \"reprehenderit ex est\",\n  \"total\": -168047,\n  \"items\": 50280281\n }\n}"
+								},
+								{
+									"name": "No data for requested year or month.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/billing/usage/:year/:month?pageSize=50&pageFromKey=pariatur officia magna nisi&pageTotal=false&fields=non quis,in veniam ut nulla&contactEmail=non quis,in veniam ut nulla&accountId=urn:uuid:1907fe8a-c22f-5fcb-4399-3a069c313efc,urn:uuid:6ba50bbf-09c1-07f2-036b-03af45a32de1",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"billing",
+												"usage",
+												":year",
+												":month"
+											],
+											"query": [
+												{
+													"key": "pageSize",
+													"value": "50"
+												},
+												{
+													"key": "pageFromKey",
+													"value": "pariatur officia magna nisi"
+												},
+												{
+													"key": "pageTotal",
+													"value": "false"
+												},
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "contactEmail",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "accountId",
+													"value": "urn:uuid:1907fe8a-c22f-5fcb-4399-3a069c313efc,urn:uuid:6ba50bbf-09c1-07f2-036b-03af45a32de1"
+												}
+											],
+											"variable": [
+												{
+													"key": "year"
+												},
+												{
+													"key": "month"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/billing/usage/:year/:month?pageSize=50&pageFromKey=pariatur officia magna nisi&pageTotal=false&fields=non quis,in veniam ut nulla&contactEmail=non quis,in veniam ut nulla&accountId=urn:uuid:1907fe8a-c22f-5fcb-4399-3a069c313efc,urn:uuid:6ba50bbf-09c1-07f2-036b-03af45a32de1",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"billing",
+												"usage",
+												":year",
+												":month"
+											],
+											"query": [
+												{
+													"key": "pageSize",
+													"value": "50"
+												},
+												{
+													"key": "pageFromKey",
+													"value": "pariatur officia magna nisi"
+												},
+												{
+													"key": "pageTotal",
+													"value": "false"
+												},
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "contactEmail",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "accountId",
+													"value": "urn:uuid:1907fe8a-c22f-5fcb-4399-3a069c313efc,urn:uuid:6ba50bbf-09c1-07f2-036b-03af45a32de1"
+												}
+											],
+											"variable": [
+												{
+													"key": "year"
+												},
+												{
+													"key": "month"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Get the monthly billing report."
+				},
+				{
+					"name": "Role management",
+					"item": [
+						{
+							"name": "List all roles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/roles",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"roles"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "custom",
+											"description": "Role type.",
+											"disabled": true
+										},
+										{
+											"key": "principalType",
+											"value": "user",
+											"description": "Principal type of role.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "List all partner roles."
+							},
+							"response": [
+								{
+									"name": "List of partner roles.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles?type=custom&principalType=user&fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "custom"
+												},
+												{
+													"key": "principalType",
+													"value": "user"
+												},
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"items\": [\n  {\n   \"id\": \"55466df6-812d-b371-1d69-7ce4701b2d89\",\n   \"name\": \"dolore et nostrud\",\n   \"type\": \"predefined\",\n   \"principalType\": \"service\",\n   \"permissionSets\": [\n    \"fugiat aliquip\"\n   ],\n   \"description\": \"elit exercitation non\",\n   \"createdAt\": \"dolor\",\n   \"updatedAt\": \"proident aliqua veniam culpa\"\n  },\n  {\n   \"id\": \"847b1bcc-6847-743b-4fa8-165581b820c8\",\n   \"name\": \"anim\",\n   \"type\": \"custom\",\n   \"principalType\": \"user\",\n   \"permissionSets\": [\n    \"consectetur culpa Excepteur enim\"\n   ],\n   \"description\": \"aliqua in labore\",\n   \"createdAt\": \"magna consectetur consequat\",\n   \"updatedAt\": \"do occaecat velit\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles?type=custom&principalType=user&fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "custom"
+												},
+												{
+													"key": "principalType",
+													"value": "user"
+												},
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create new role",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"pariatur sit\",\n    \"permissionSets\": [\n        \"cillum fugiat\"\n    ],\n    \"principalType\": \"service\",\n    \"description\": \"ipsum cillum\"\n}"
+								},
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/roles",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"roles"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Create a new partner role."
+							},
+							"response": [
+								{
+									"name": "Requested role created.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"pariatur sit\",\n    \"permissionSets\": [\n        \"cillum fugiat\"\n    ],\n    \"principalType\": \"service\",\n    \"description\": \"ipsum cillum\"\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"ab436be7-da19-1709-87a0-add09296257c\",\n \"name\": \"sed ullamco dolore ipsum\",\n \"type\": \"custom\",\n \"principalType\": \"user\",\n \"permissionSets\": [\n  \"cupidatat aliquip ea\"\n ],\n \"description\": \"sint ut Lore\",\n \"createdAt\": \"esse occaecat deserunt Ut\",\n \"updatedAt\": \"Excepteur sunt eiusmod tempor\"\n}"
+								},
+								{
+									"name": "Role name already in use or is a pre-defined role name.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"pariatur sit\",\n    \"permissionSets\": [\n        \"cillum fugiat\"\n    ],\n    \"principalType\": \"service\",\n    \"description\": \"ipsum cillum\"\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"pariatur sit\",\n    \"permissionSets\": [\n        \"cillum fugiat\"\n    ],\n    \"principalType\": \"service\",\n    \"description\": \"ipsum cillum\"\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get role by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"roles",
+										":roleId"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "roleId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Role ID."
+										}
+									]
+								},
+								"description": "Get partner role by ID."
+							},
+							"response": [
+								{
+									"name": "Details of the requested role.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"ab436be7-da19-1709-87a0-add09296257c\",\n \"name\": \"sed ullamco dolore ipsum\",\n \"type\": \"custom\",\n \"principalType\": \"user\",\n \"permissionSets\": [\n  \"cupidatat aliquip ea\"\n ],\n \"description\": \"sint ut Lore\",\n \"createdAt\": \"esse occaecat deserunt Ut\",\n \"updatedAt\": \"Excepteur sunt eiusmod tempor\"\n}"
+								},
+								{
+									"name": "Can't find role.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Patch role",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ex\",\n    \"description\": \"U\",\n    \"permissionSets\": [\n        \"labore quis\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"roles",
+										":roleId"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "roleId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Role ID."
+										}
+									]
+								},
+								"description": "Patch an existing partner role."
+							},
+							"response": [
+								{
+									"name": "Updated role.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"ex\",\n    \"description\": \"U\",\n    \"permissionSets\": [\n        \"labore quis\"\n    ]\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"ab436be7-da19-1709-87a0-add09296257c\",\n \"name\": \"sed ullamco dolore ipsum\",\n \"type\": \"custom\",\n \"principalType\": \"user\",\n \"permissionSets\": [\n  \"cupidatat aliquip ea\"\n ],\n \"description\": \"sint ut Lore\",\n \"createdAt\": \"esse occaecat deserunt Ut\",\n \"updatedAt\": \"Excepteur sunt eiusmod tempor\"\n}"
+								},
+								{
+									"name": "Role name already in use or is a pre-defined role name.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"ex\",\n    \"description\": \"U\",\n    \"permissionSets\": [\n        \"labore quis\"\n    ]\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"ex\",\n    \"description\": \"U\",\n    \"permissionSets\": [\n        \"labore quis\"\n    ]\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId?fields=non quis,in veniam ut nulla",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete role by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"roles",
+										":roleId"
+									],
+									"variable": [
+										{
+											"key": "roleId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Role ID."
+										}
+									]
+								},
+								"description": "Delete a partner role by ID."
+							},
+							"response": [
+								{
+									"name": "Requested role deleted.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"deleted\": false\n}"
+								},
+								{
+									"name": "You can't delete a role assigned to an admin.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/:roleId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get permission sets",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/roles/permission-sets",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"roles",
+										"permission-sets"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "base",
+											"description": "Permission set type.",
+											"disabled": true
+										},
+										{
+											"key": "product",
+											"value": "encryption",
+											"description": "Filter permission sets associated with given product name.",
+											"disabled": true
+										},
+										{
+											"key": "access",
+											"value": "admin",
+											"description": "Access level of permission set.",
+											"disabled": true
+										},
+										{
+											"key": "allowedInCustomRole",
+											"value": "true",
+											"description": "Filter permissions sets allowed in custom roles.",
+											"disabled": true
+										},
+										{
+											"key": "principalType",
+											"value": "user",
+											"description": "Principal type of role.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Get permission set details."
+							},
+							"response": [
+								{
+									"name": "List of permission sets.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/permission-sets?fields=non quis,in veniam ut nulla&type=base&product=encryption&access=admin&allowedInCustomRole=true&principalType=user",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												"permission-sets"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "type",
+													"value": "base"
+												},
+												{
+													"key": "product",
+													"value": "encryption"
+												},
+												{
+													"key": "access",
+													"value": "admin"
+												},
+												{
+													"key": "allowedInCustomRole",
+													"value": "true"
+												},
+												{
+													"key": "principalType",
+													"value": "user"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"items\": [\n  {\n   \"id\": \"commodo labore velit\",\n   \"name\": \"nisi cupidatat commodo amet\",\n   \"type\": \"base\",\n   \"principalTypes\": [\n    \"service\",\n    \"user\"\n   ],\n   \"allowedInCustomRoles\": false,\n   \"description\": \"irure nulla\",\n   \"access\": \"readOnly\",\n   \"products\": [\n    \"wireless\",\n    \"webGateway\"\n   ]\n  },\n  {\n   \"id\": \"e\",\n   \"name\": \"cillum culpa\",\n   \"type\": \"setting\",\n   \"principalTypes\": [\n    \"user\",\n    \"service\"\n   ],\n   \"allowedInCustomRoles\": true,\n   \"description\": \"nisi sit quis qui id\",\n   \"access\": \"helpdesk\",\n   \"products\": [\n    \"ztna\",\n    \"server\"\n   ]\n  }\n ]\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/roles/permission-sets?fields=non quis,in veniam ut nulla&type=base&product=encryption&access=admin&allowedInCustomRole=true&principalType=user",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"roles",
+												"permission-sets"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "type",
+													"value": "base"
+												},
+												{
+													"key": "product",
+													"value": "encryption"
+												},
+												{
+													"key": "access",
+													"value": "admin"
+												},
+												{
+													"key": "allowedInCustomRole",
+													"value": "true"
+												},
+												{
+													"key": "principalType",
+													"value": "user"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Manage roles and permission sets."
+				},
+				{
+					"name": "Admin management",
+					"item": [
+						{
+							"name": "List all admins",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/admins",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"admins"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "The page number to fetch, starting with 1.",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "50",
+											"description": "The size of the page requested.",
+											"disabled": true
+										},
+										{
+											"key": "pageTotal",
+											"value": "false",
+											"description": "Whether the number of pages should be calculated and returned in the response.",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "l:asc,Nio{/[|:desc",
+											"description": "Defines how to sort the data.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "in dolore incididunt veniam,aliquip cillum",
+											"description": "The fields to return in a partial response.",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "pariatur officia magna nisi",
+											"description": "Search for items that match the given terms.",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "pariatur officia magna nisi",
+											"description": "Search by email.",
+											"disabled": true
+										},
+										{
+											"key": "roleId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "Search by role ID.",
+											"disabled": true
+										},
+										{
+											"key": "withAccessToTenant",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "Search for admins that have access to the given tenant.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "List all partner admins."
+							},
+							"response": [
+								{
+									"name": "Paged array of partner admins.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins?page=1&pageSize=50&pageTotal=false&sort=d+ze+u/D3:asc,]-\\S|Y&fields=non quis,in veniam ut nulla&search=pariatur officia magna nisi&email=pariatur officia magna nisi&roleId=b5ac0e33-dfaa-2452-7148-72bcc78442a0&withAccessToTenant=b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "50"
+												},
+												{
+													"key": "pageTotal",
+													"value": "false"
+												},
+												{
+													"key": "sort",
+													"value": "d+ze+u/D3:asc,]-\\S|Y"
+												},
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "search",
+													"value": "pariatur officia magna nisi"
+												},
+												{
+													"key": "email",
+													"value": "pariatur officia magna nisi"
+												},
+												{
+													"key": "roleId",
+													"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0"
+												},
+												{
+													"key": "withAccessToTenant",
+													"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"items\": [\n  {\n   \"id\": \"urn:uuid:3954f650-9ea1-5a37-982e-071fabcd6274\",\n   \"username\": \"Ht-xvDLxfSWspGL@ZzSEeFYmKRTpwS.cyr\",\n   \"profile\": {\n    \"firstName\": \"dolor quis eiusmod consectetur nulla\",\n    \"lastName\": \"dolore Duis ut\",\n    \"name\": \"cillum dolore minim\",\n    \"phone\": \"commodo Ut dolore\",\n    \"mobile\": \"Duis exercitation laboris Ut dolor\",\n    \"fax\": \"ea ex\"\n   },\n   \"active\": false,\n   \"primary\": false,\n   \"roleAssignments\": [\n    {\n     \"id\": \"905a0e2d-4cba-f3b0-77c7-7803d53ae369\",\n     \"roleId\": \"urn:uuid:60a8ca75-56da-5759-ebfd-3662dd071b79\",\n     \"scope\": {\n      \"type\": \"self\",\n      \"id\": \"b849706e-fbee-5309-c54e-5a33ef83b069\"\n     }\n    },\n    {\n     \"id\": \"bc9ad5ab-22ce-3963-dfdf-3838b0b702fa\",\n     \"roleId\": \"urn:uuid:ef1b9cb1-8b29-2fa9-ecbd-da06ade8d6e9\",\n     \"scope\": {\n      \"type\": \"allManagedTenants\",\n      \"id\": \"urn:uuid:dc3b74d8-24c4-1d11-d1de-65b7159ca11c\"\n     }\n    }\n   ]\n  },\n  {\n   \"id\": \"36e84da8-7f0e-4626-954c-eec4f6e469d5\",\n   \"username\": \"NROvX7r@qTnwcegvLuGp.mq\",\n   \"profile\": {\n    \"firstName\": \"a\",\n    \"lastName\": \"ex amet commodo adipisicing\",\n    \"name\": \"amet do est\",\n    \"phone\": \"do\",\n    \"mobile\": \"cupidatat ut non\",\n    \"fax\": \"dolore sint ullamco ea consectetur\"\n   },\n   \"active\": false,\n   \"primary\": false,\n   \"roleAssignments\": [\n    {\n     \"id\": \"urn:uuid:6125f491-04da-f0d2-f1e5-7162a0bbf07f\",\n     \"roleId\": \"urn:uuid:372f742e-e260-f51e-b985-3cce9a728e7a\",\n     \"scope\": {\n      \"type\": \"allManagedTenants\",\n      \"id\": \"urn:uuid:ab605b47-24a1-b7eb-c2cb-a4a0764b8f4b\"\n     }\n    },\n    {\n     \"id\": \"4424beeb-148f-08d3-3b01-841d66f07197\",\n     \"roleId\": \"ca00122a-b23e-d456-3918-122cd2d585f1\",\n     \"scope\": {\n      \"type\": \"tenant\",\n      \"id\": \"urn:uuid:c0907666-3212-48fc-bc01-fd40f04c9809\"\n     }\n    }\n   ]\n  }\n ],\n \"pages\": {\n  \"current\": 67159741,\n  \"size\": -32833541,\n  \"maxSize\": -79766581,\n  \"total\": 32384192,\n  \"items\": 62016779\n }\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins?page=1&pageSize=50&pageTotal=false&sort=d+ze+u/D3:asc,]-\\S|Y&fields=non quis,in veniam ut nulla&search=pariatur officia magna nisi&email=pariatur officia magna nisi&roleId=b5ac0e33-dfaa-2452-7148-72bcc78442a0&withAccessToTenant=b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "50"
+												},
+												{
+													"key": "pageTotal",
+													"value": "false"
+												},
+												{
+													"key": "sort",
+													"value": "d+ze+u/D3:asc,]-\\S|Y"
+												},
+												{
+													"key": "fields",
+													"value": "non quis,in veniam ut nulla"
+												},
+												{
+													"key": "search",
+													"value": "pariatur officia magna nisi"
+												},
+												{
+													"key": "email",
+													"value": "pariatur officia magna nisi"
+												},
+												{
+													"key": "roleId",
+													"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0"
+												},
+												{
+													"key": "withAccessToTenant",
+													"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create new admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Yc4PWM3sv@UuAOqaPNhCanLq.mo\",\n    \"profile\": {\n        \"firstName\": \"dolor est culpa ea\",\n        \"lastName\": \"eiusmod enim\",\n        \"name\": \"sed dolore\",\n        \"phone\": \"pariatur officia quis reprehenderit\",\n        \"mobile\": \"ea commodo\",\n        \"fax\": \"cupidatat enim ad\"\n    },\n    \"roleAssignments\": [\n        {\n            \"roleId\": \"urn:uuid:2a94ea3b-d61b-0455-9e70-fa7b075c3aad\",\n            \"scope\": {\n                \"type\": \"allManagedTenants\",\n                \"id\": \"9e99b6e0-71df-f6f2-d4c8-8ac78f6884ce\"\n            }\n        },\n        {\n            \"roleId\": \"urn:uuid:382051d2-a77e-7e4e-760a-622fbbca0743\",\n            \"scope\": {\n                \"type\": \"tenant\",\n                \"id\": \"urn:uuid:70afe34f-caef-801a-b167-aae36edefd9c\"\n            }\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/admins",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"admins"
+									]
+								},
+								"description": "Create a new partner administrator."
+							},
+							"response": [
+								{
+									"name": "Requested admin created.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"pJV3T4JsM1bZn@QpGaxnHeRdSmXPBgiwIiJ.cfrw\",\n    \"profile\": {\n        \"firstName\": \"nostrud veniam minim sit\",\n        \"lastName\": \"non ullamco irure\",\n        \"name\": \"ullamco \",\n        \"phone\": \"officia enim sed\",\n        \"mobile\": \"esse elit non magna\",\n        \"fax\": \"sit magna\"\n    },\n    \"roleAssignments\": [\n        {\n            \"roleId\": \"urn:uuid:edaf1e79-02c8-890a-50c5-2b5205922f51\",\n            \"scope\": {\n                \"type\": \"tenant\",\n                \"id\": \"f6d04c81-53fc-637a-423a-93e528ab18c5\"\n            }\n        },\n        {\n            \"roleId\": \"urn:uuid:702d3cac-1f24-3e2d-a655-0b0d1c9f98c0\",\n            \"scope\": {\n                \"type\": \"self\",\n                \"id\": \"urn:uuid:c30824c6-6a94-8bf4-75dc-2445e21213a4\"\n            }\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"urn:uuid:2eff6c01-5d3d-bc49-f7c8-4523b520a92d\",\n \"username\": \"9DGXFcQTV5vcGIK@MuT.dfp\",\n \"profile\": {\n  \"firstName\": \"laborum incididunt consectetur ex\",\n  \"lastName\": \"ex\",\n  \"name\": \"magna\",\n  \"phone\": \"Excepteur ea ad\",\n  \"mobile\": \"veniam ea\",\n  \"fax\": \"anim reprehenderit aliquip eu\"\n },\n \"active\": true,\n \"primary\": false,\n \"roleAssignments\": [\n  {\n   \"id\": \"urn:uuid:ab80975f-da00-626f-3890-542925a0c4b1\",\n   \"roleId\": \"urn:uuid:7607621b-8f3f-3683-be37-46ad99a5d905\",\n   \"scope\": {\n    \"type\": \"tenant\",\n    \"id\": \"1ad79a59-593d-9035-9517-25d904b8ac32\"\n   }\n  },\n  {\n   \"id\": \"63e19017-8b88-d20f-cb29-d64ea290cd20\",\n   \"roleId\": \"urn:uuid:883fac30-95a5-2107-1dc6-c79ad8cd63a1\",\n   \"scope\": {\n    \"type\": \"tenant\",\n    \"id\": \"a346f0dc-7a25-a5a6-c664-faf66644ad7a\"\n   }\n  }\n ]\n}"
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"pJV3T4JsM1bZn@QpGaxnHeRdSmXPBgiwIiJ.cfrw\",\n    \"profile\": {\n        \"firstName\": \"nostrud veniam minim sit\",\n        \"lastName\": \"non ullamco irure\",\n        \"name\": \"ullamco \",\n        \"phone\": \"officia enim sed\",\n        \"mobile\": \"esse elit non magna\",\n        \"fax\": \"sit magna\"\n    },\n    \"roleAssignments\": [\n        {\n            \"roleId\": \"urn:uuid:edaf1e79-02c8-890a-50c5-2b5205922f51\",\n            \"scope\": {\n                \"type\": \"tenant\",\n                \"id\": \"f6d04c81-53fc-637a-423a-93e528ab18c5\"\n            }\n        },\n        {\n            \"roleId\": \"urn:uuid:702d3cac-1f24-3e2d-a655-0b0d1c9f98c0\",\n            \"scope\": {\n                \"type\": \"self\",\n                \"id\": \"urn:uuid:c30824c6-6a94-8bf4-75dc-2445e21213a4\"\n            }\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Email address already in use.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"pJV3T4JsM1bZn@QpGaxnHeRdSmXPBgiwIiJ.cfrw\",\n    \"profile\": {\n        \"firstName\": \"nostrud veniam minim sit\",\n        \"lastName\": \"non ullamco irure\",\n        \"name\": \"ullamco \",\n        \"phone\": \"officia enim sed\",\n        \"mobile\": \"esse elit non magna\",\n        \"fax\": \"sit magna\"\n    },\n    \"roleAssignments\": [\n        {\n            \"roleId\": \"urn:uuid:edaf1e79-02c8-890a-50c5-2b5205922f51\",\n            \"scope\": {\n                \"type\": \"tenant\",\n                \"id\": \"f6d04c81-53fc-637a-423a-93e528ab18c5\"\n            }\n        },\n        {\n            \"roleId\": \"urn:uuid:702d3cac-1f24-3e2d-a655-0b0d1c9f98c0\",\n            \"scope\": {\n                \"type\": \"self\",\n                \"id\": \"urn:uuid:c30824c6-6a94-8bf4-75dc-2445e21213a4\"\n            }\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins"
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"pJV3T4JsM1bZn@QpGaxnHeRdSmXPBgiwIiJ.cfrw\",\n    \"profile\": {\n        \"firstName\": \"nostrud veniam minim sit\",\n        \"lastName\": \"non ullamco irure\",\n        \"name\": \"ullamco \",\n        \"phone\": \"officia enim sed\",\n        \"mobile\": \"esse elit non magna\",\n        \"fax\": \"sit magna\"\n    },\n    \"roleAssignments\": [\n        {\n            \"roleId\": \"urn:uuid:edaf1e79-02c8-890a-50c5-2b5205922f51\",\n            \"scope\": {\n                \"type\": \"tenant\",\n                \"id\": \"f6d04c81-53fc-637a-423a-93e528ab18c5\"\n            }\n        },\n        {\n            \"roleId\": \"urn:uuid:702d3cac-1f24-3e2d-a655-0b0d1c9f98c0\",\n            \"scope\": {\n                \"type\": \"self\",\n                \"id\": \"urn:uuid:c30824c6-6a94-8bf4-75dc-2445e21213a4\"\n            }\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get admin by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"admins",
+										":adminId"
+									],
+									"variable": [
+										{
+											"key": "adminId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Partner administrator ID."
+										}
+									]
+								},
+								"description": "Get partner administrator details by ID."
+							},
+							"response": [
+								{
+									"name": "Details of the requested partner administrator.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"urn:uuid:2eff6c01-5d3d-bc49-f7c8-4523b520a92d\",\n \"username\": \"9DGXFcQTV5vcGIK@MuT.dfp\",\n \"profile\": {\n  \"firstName\": \"laborum incididunt consectetur ex\",\n  \"lastName\": \"ex\",\n  \"name\": \"magna\",\n  \"phone\": \"Excepteur ea ad\",\n  \"mobile\": \"veniam ea\",\n  \"fax\": \"anim reprehenderit aliquip eu\"\n },\n \"active\": true,\n \"primary\": false,\n \"roleAssignments\": [\n  {\n   \"id\": \"urn:uuid:ab80975f-da00-626f-3890-542925a0c4b1\",\n   \"roleId\": \"urn:uuid:7607621b-8f3f-3683-be37-46ad99a5d905\",\n   \"scope\": {\n    \"type\": \"tenant\",\n    \"id\": \"1ad79a59-593d-9035-9517-25d904b8ac32\"\n   }\n  },\n  {\n   \"id\": \"63e19017-8b88-d20f-cb29-d64ea290cd20\",\n   \"roleId\": \"urn:uuid:883fac30-95a5-2107-1dc6-c79ad8cd63a1\",\n   \"scope\": {\n    \"type\": \"tenant\",\n    \"id\": \"a346f0dc-7a25-a5a6-c664-faf66644ad7a\"\n   }\n  }\n ]\n}"
+								},
+								{
+									"name": "Can't find admin.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "List admin's roles assignments",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"admins",
+										":adminId",
+										"role-assignments"
+									],
+									"variable": [
+										{
+											"key": "adminId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Partner administrator ID."
+										}
+									]
+								},
+								"description": "Get the list of role assignments for given admin."
+							},
+							"response": [
+								{
+									"name": "A list of role assignments for an admin.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"items\": [\n  {\n   \"id\": \"e636cc77-6b98-33ca-21d8-2f2f852ad28f\",\n   \"roleId\": \"386d7dfd-83f6-cd8a-4f33-0428a2cc2eac\",\n   \"scope\": {\n    \"type\": \"tenant\",\n    \"id\": \"2ed0bd96-5def-bb6a-1d59-7f24570be805\"\n   }\n  },\n  {\n   \"id\": \"64c1d922-ffbb-20fa-c946-614f9381a378\",\n   \"roleId\": \"urn:uuid:fe64890b-10b3-6da7-8410-55a3ed2c518b\",\n   \"scope\": {\n    \"type\": \"allManagedTenants\",\n    \"id\": \"46327260-d8b6-162a-5b9d-0d3644d5ad5e\"\n   }\n  }\n ]\n}"
+								},
+								{
+									"name": "Can't find admin.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Assign a role",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"roleId\": \"7412a59d-16fa-070e-b294-6f29b7eb1b8c\",\n    \"scope\": {\n        \"type\": \"tenant\",\n        \"id\": \"da58d85e-813a-7354-da26-75a974120391\"\n    }\n}"
+								},
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"admins",
+										":adminId",
+										"role-assignments"
+									],
+									"variable": [
+										{
+											"key": "adminId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Partner administrator ID."
+										}
+									]
+								},
+								"description": "Assign a role to a partner administrator."
+							},
+							"response": [
+								{
+									"name": "Requested assignment created.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"roleId\": \"7412a59d-16fa-070e-b294-6f29b7eb1b8c\",\n    \"scope\": {\n        \"type\": \"tenant\",\n        \"id\": \"da58d85e-813a-7354-da26-75a974120391\"\n    }\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"6a191f6d-fd11-8775-d076-addbebb732a1\",\n \"roleId\": \"urn:uuid:5946edbc-e89e-0745-c774-d304487b2d88\",\n \"scope\": {\n  \"type\": \"allManagedTenants\",\n  \"id\": \"urn:uuid:4b74bd54-40b9-f0b6-f7fb-dc25c454fd90\"\n }\n}"
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"roleId\": \"7412a59d-16fa-070e-b294-6f29b7eb1b8c\",\n    \"scope\": {\n        \"type\": \"tenant\",\n        \"id\": \"da58d85e-813a-7354-da26-75a974120391\"\n    }\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Can't find admin or role.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"roleId\": \"7412a59d-16fa-070e-b294-6f29b7eb1b8c\",\n    \"scope\": {\n        \"type\": \"tenant\",\n        \"id\": \"da58d85e-813a-7354-da26-75a974120391\"\n    }\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"roleId\": \"7412a59d-16fa-070e-b294-6f29b7eb1b8c\",\n    \"scope\": {\n        \"type\": \"tenant\",\n        \"id\": \"da58d85e-813a-7354-da26-75a974120391\"\n    }\n}"
+										},
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get role assignment by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments/:assignmentId",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"admins",
+										":adminId",
+										"role-assignments",
+										":assignmentId"
+									],
+									"variable": [
+										{
+											"key": "adminId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Partner administrator ID."
+										},
+										{
+											"key": "assignmentId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Role assignment ID."
+										}
+									]
+								},
+								"description": "Get partner administrator role assignment by ID."
+							},
+							"response": [
+								{
+									"name": "Details of role assignment.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments/:assignmentId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments",
+												":assignmentId"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												},
+												{
+													"key": "assignmentId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"6a191f6d-fd11-8775-d076-addbebb732a1\",\n \"roleId\": \"urn:uuid:5946edbc-e89e-0745-c774-d304487b2d88\",\n \"scope\": {\n  \"type\": \"allManagedTenants\",\n  \"id\": \"urn:uuid:4b74bd54-40b9-f0b6-f7fb-dc25c454fd90\"\n }\n}"
+								},
+								{
+									"name": "Can't find admin or assignment.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments/:assignmentId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments",
+												":assignmentId"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												},
+												{
+													"key": "assignmentId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments/:assignmentId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments",
+												":assignmentId"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												},
+												{
+													"key": "assignmentId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Remove a role",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "(Required) Partner ID.",
+										"key": "X-Partner-ID",
+										"value": "{{partner_id}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments/:assignmentId",
+									"protocol": "https",
+									"host": [
+										"api",
+										"central",
+										"sophos",
+										"com"
+									],
+									"path": [
+										"partner",
+										"v1",
+										"admins",
+										":adminId",
+										"role-assignments",
+										":assignmentId"
+									],
+									"variable": [
+										{
+											"key": "adminId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Partner administrator ID."
+										},
+										{
+											"key": "assignmentId",
+											"value": "b5ac0e33-dfaa-2452-7148-72bcc78442a0",
+											"description": "(Required) Role assignment ID."
+										}
+									]
+								},
+								"description": "Remove role assignment from an admin."
+							},
+							"response": [
+								{
+									"name": "Role assignment removed.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments/:assignmentId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments",
+												":assignmentId"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												},
+												{
+													"key": "assignmentId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"deleted\": false\n}"
+								},
+								{
+									"name": "Unexpected error.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Partner ID.",
+												"key": "X-Partner-ID",
+												"value": "{{partner_id}}"
+											}
+										],
+										"url": {
+											"raw": "https://api.central.sophos.com/partner/v1/admins/:adminId/role-assignments/:assignmentId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"central",
+												"sophos",
+												"com"
+											],
+											"path": [
+												"partner",
+												"v1",
+												"admins",
+												":adminId",
+												"role-assignments",
+												":assignmentId"
+											],
+											"variable": [
+												{
+													"key": "adminId"
+												},
+												{
+													"key": "assignmentId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"eiusmod reprehenderit\",\n \"message\": \"commodo fugiat\",\n \"correlationId\": \"urn:uuid:5de5bdc3-00bd-5102-d469-084f6d03e2d3\",\n \"code\": \"ad reprehenderit ex occaecat\",\n \"createdAt\": \"sit cillum\",\n \"requestId\": \"urn:uuid:244f4f14-1eca-6ace-fd81-3893f12157b1\",\n \"docUrl\": \"http://YGWsxK.puweDBepKfk5Uaym5+W,PS2qNZZyBLBljZ42zfPMC-Iarsp.nk\"\n}"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
