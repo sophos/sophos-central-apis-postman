@@ -14,7 +14,7 @@ Note down the `client_id` and `client_secret` for the API credentials you create
 
 ## Install Postman
 
-To use this collection you will need to install [Postman](https://www.getpostman.com/downloads/) v7.36 or a later stable version.
+To use this collection you will need to install [Postman](https://www.getpostman.com/downloads/) v9.25 or a later stable version.
 
 ## Import collection
 
