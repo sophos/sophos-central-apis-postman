@@ -1,6 +1,10 @@
 # Postman collection for Sophos Central APIs
 
-This is a Postman collection for interacting with Sophos Central's Public APIs. See [https://developer.sophos.com](https://developer.sophos.com).
+This is a Postman collection for interacting with Sophos Central APIs. See [https://developer.sophos.com](https://developer.sophos.com).
+
+![Sophos - Defeat Cyberattacks](assets/sophos-logo.png)
+
+Powered by Sophos Central<sup>TM</sup>
 
 ## Getting started
 
